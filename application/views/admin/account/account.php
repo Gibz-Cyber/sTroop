@@ -133,7 +133,6 @@
                 <span class="sr-only">Loading...</span></button>
                 <br><br>
           </form> 
-
           <!--add an admin end from here-->
 
         </div>
