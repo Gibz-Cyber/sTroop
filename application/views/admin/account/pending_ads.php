@@ -52,37 +52,104 @@
 
      <div class="container" style="margin-top: 100px;">
       <!--container start from here-->
+      <h4 align="center">Pending Ads</h4>
       <?php
 
-      /*  if($this->session->flashdata("welcome_msg"){
+      if($result === false){
+        //no ads available start from here
+        echo "<div class='alert alert-danger'><p align='center'>No pending ads available at this moment!</p></div>";
+        //no ads available end form here
+      }else{
+        //ads available start from here
 
-          echo $this->session->flashdata("welcome_msg");
+          ?>
 
-        } */
 
-      ?>
-
-      <table class="table">
+          <table class="table">
             <thead>
               <tr>
-                <th scope="col">Users</th>
-                <th scope="col">Admins</th>
-                <th scope="col">Pending Ads</th>
-                <th scope="col">Active Ads</th>
+                <th scope="col">Ad id</th>
+                <th scope="col">Main Category</th>
+                <th scope="col">Title</th>
               </tr>
             </thead>
             <tbody>
+              <?php
+
+              foreach($result as $individualAd){
+
+              ?>
+
               <tr>
-                <th scope="row"><?php echo $user; ?></th>
-                <td><?php echo $admin; ?></td>
-                <td><?php echo $pendingAds; ?></td>
-                <td><?php echo $activeAds; ?></td>
+                <th scope="row"><?php echo $individualAd->ad_id; ?></th>
+                <td><?php echo $individualAd->main_category; ?></td>
+                <td><?php echo $individualAd->title; ?></td>
+                <td><button class='btn btn-warning btn-sm'>View</button></td>
+                <td><button class='btn btn-success btn-sm' onclick="changeStatus(1,'<?php echo $individualAd->ad_id; ?>' )">Active</button></td>
+                <td><button class='btn btn-danger btn-sm' onclick="changeStatus(0,'<?php echo $individualAd->ad_id; ?>' )">Delete</button></td>
               </tr>
+
+              <?php
+
+              }
+
+              ?>
             </tbody>
           </table>
 
+          <?php
+
+        //ads available end from here
+      }
+
+
+      ?>
+
+
       <!--container end from here-->
      </div>
+
+     <script type="text/javascript">
+       
+       function changeStatus(type,id){
+
+        $(document).ready(function(){
+          
+          $.ajax({
+            url:"<?php echo base_url('/index.php/AdminDataProcessor/adStatus'); ?>",
+            data:{type:type,id:id},
+            dataType:"json",
+            type:"POST",
+            beforeSend:function(){
+
+            },success:function(respData){
+
+              if(!respData.success){
+
+                alert("Please refresh the page and try again");
+
+              }else{
+
+                if(!respData.update){
+                  //update error start from here
+                  alert("Oops! something went wrong. Please try again later");
+                  //update error end from here
+                }else{
+                  //update success start from here
+                  window.location.href=document.URL;
+                  //update success end from here
+                }
+
+              }
+
+            }
+          });
+
+        });
+
+       }
+
+     </script>
 
 
       <script src="<?php echo base_url('/assets/js/bootstrap.bundle.min.js'); ?>"></script>

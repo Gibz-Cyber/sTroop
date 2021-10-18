@@ -33,6 +33,22 @@ class AdminDataProcessorModel extends CI_Model{
 
 	}
 
+	public function adStatus($adId,$adStatus){
+
+		$this->load->database();
+		$sql = "UPDATE ad SET ad_status = ? WHERE ad_id = ?;";
+		$this->db->query($sql,array($adStatus,$adId));
+		$affect = $this->db->affected_rows();
+		$this->db->close();
+
+		if($affect != 1){
+			return false;
+		}else{
+			return true;
+		}
+
+	}
+
 }
 
 ?>

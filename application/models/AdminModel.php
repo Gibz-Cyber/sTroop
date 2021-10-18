@@ -37,6 +37,21 @@ class AdminModel extends CI_Model{
 
 	}
 
+	public function getAdsData($adStatus){
+
+		$this->load->database();
+		$sql = "SELECT ad_id, main_category,title FROM ad WHERE ad_status = ?;";
+		$query = $this->db->query($sql,array($adStatus));
+		$this->db->close();
+
+		if($query->num_rows() > 0){
+			return $query->result();
+		}else{
+			return false;
+		}
+
+	}
+
 }
 
 ?>

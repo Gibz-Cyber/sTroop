@@ -87,6 +87,44 @@ class Admin extends CI_Controller{
 
 	}
 
+	public function pendingAds(){
+
+	//	if($this->checkSessions()){
+			//sessions available start from here
+			$this->load->library("AdStatus");
+			$this->load->model("AdminModel");
+
+			$data['result'] = $this->AdminModel->getAdsData($this->adstatus->getPending());
+			$this->load->view("admin/account/pending_ads",$data);
+			//sessiona vailable end form hgere
+	//	}else{
+			//sesisons nor avaibale start from here
+	//		echo "404";
+			//sessions not avaibale end form ghere
+	//	}
+
+	}
+
+	public function activeAds(){
+
+	//	if($this->checkSessions()){
+			//sessions available start from here
+
+			$this->load->library("AdStatus");
+			$this->load->model("AdminModel");
+
+			$data['result'] = $this->AdminModel->getAdsData($this->adstatus->getActive());
+			$this->load->view("admin/account/active_ads",$data);
+
+			//sessions available end form here
+	//	}else{
+			//sessions not available end from here
+	//		echo "404";
+			//sessions not available end from here
+	//	}
+
+	}
+
 
 }
 

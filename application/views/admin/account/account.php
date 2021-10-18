@@ -31,13 +31,13 @@
                 <a class="nav-link active" aria-current="page" href="<?php echo base_url('/index.php/admin/clients'); ?>">Clients</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-signup">Active Ads</a>
+                <a class="nav-link" href="<?php echo base_url('/index.php/admin/activeAds'); ?>">Active Ads</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="aboutus.html">Update Requests</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Pending Ads</a>
+                <a class="nav-link" href="<?php echo base_url('/index.php/admin/pendingAds'); ?>">Pending Ads</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/index.php/admin/account'); ?>">Account</a>
@@ -104,32 +104,32 @@
                 <div class="form-group">
               <label>First Name</label>
               <input type="text" required name="fname" class="form-control" placeholder="First name of new Admin">
-              <small id="current_pwd_error" style="color: red;"></small>
+              <small id="a-name-error" style="color: red;"></small>
             </div><br>
             <div class="form-group">
               <label>Last Name<small>(Minimum 8 characters and Maximum 30 characters)</small></label>
               <input type="text" required name="lname" class="form-control" placeholder="Last Name of new Admin">
-              <small id="new_pwd_error" style="color: red;"></small>
+              <small id="a-lname-error" style="color: red;"></small>
             </div><br>
             <div class="form-group">
               <label>Email</label>
               <input type="email" required name="email" class="form-control" placeholder="New Admin's email" maxlength="30" minlength="8">
-              <small id="repeat_pwd_error" style="color: red;"></small>
+              <small id="a-email-error" style="color: red;"></small>
             </div><br>
              <div class="form-group">
               <label>Password<small>(Minimum 8 characters and Maximum 30 characters)</small></label>
               <input type="password" required name="a_pwd" id="a_pwd" class="form-control" placeholder="Password" maxlength="30" minlength="8">
-              <small id="repeat_pwd_error" style="color: red;"></small>
+              <small id="a-pwd-error" style="color: red;"></small>
             </div><br>
              <div class="form-group">
               <label>Repeat Password</label>
               <input type="password" required name="a_rpwd" id="a_rpwd" class="form-control" placeholder="Repeat password again" maxlength="30" minlength="8">
-              <small id="repeat_pwd_error" style="color: red;"></small>
+              <small id="a-rpwd-error" style="color: red;"></small>
             </div><br>
             <div class="form-group">
-              <input type="checkbox" onclick="showPwd()"> Show password
+              <input type="checkbox" onclick="adminShowPwd()"> Show password
             </div><br>
-              <button class="btn btn-outline-primary" id="c_pwd">Change password <span id="change_password_spinner"class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              <button class="btn btn-outline-primary" id="add_admin">Add Admin <span id="change_password_spinner"class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 <span class="sr-only">Loading...</span></button>
                 <br><br>
           </form> 
@@ -142,7 +142,42 @@
       <!--container end from here-->
      </div>
 
+      <script type="text/javascript">
 
+        function showPwd(){
+
+          var pwd = document.getElementById("npwd");
+          var rpwd = document.getElementById("rpwd");
+          var cpwd = document.getElementById("cpwd");
+
+          if(pwd.type == "password"){
+            pwd.type = "text";
+            rpwd.type = "text";
+            cpwd.type = "text";
+          }else{
+            pwd.type = "password";
+            rpwd.type = "password";
+            cpwd.type = "password";
+          } 
+
+        }
+        
+        function adminShowPwd(){
+
+          var pwd = document.getElementById("a_pwd");
+          var rpwd = document.getElementById("a_rpwd");
+
+          if(pwd.type == "password"){
+            pwd.type = "text";
+            rpwd.type = "text";
+          }else{
+            pwd.type = "password";
+            rpwd.type = "password";
+          }
+
+        }
+
+      </script>
       <script src="<?php echo base_url('/assets/js/bootstrap.bundle.min.js'); ?>"></script>
     </body>
     </html>

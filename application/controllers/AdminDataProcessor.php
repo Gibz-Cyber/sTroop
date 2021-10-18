@@ -146,6 +146,76 @@ class AdminDataProcessor extends CI_Controller{
 
 	}
 
+
+	public function adStatus(){
+
+	//	if($this->checkSessions()){
+			//sessions available start from here
+			if($_SERVER['REQUEST_METHOD'] == "POST"){
+				//request method post start from here
+
+				$this->load->library("form_validation");
+
+				$this->form_validation->set_rules("type","type","required");
+				$this->form_validation->set_rules("id","id","required");
+
+				if(!$this->form_validation->run()){
+					//validation error start from here
+					$array = array(
+						"success"=>false
+					);
+					//validation error end from here
+				}else{
+					//validation success start from here
+					$this->load->library("AdStatus");
+					$this->load->library("Filter");
+					$this->load->model("AdminDataProcessorModel");
+
+					if($this->input->post("type") == 1){
+						$adStatus = $this->adstatus->getActive();
+					}else{
+						$adStatus = $this->adstatus->getDelete();
+					}
+
+					$adId = $this->filter->xssFilter($this->input->post("id"));
+
+					$update = $this->AdminDataProcessorModel->adStatus($adId,$adStatus);
+
+					if($update === false){
+						//update error start from here
+						$array = array(
+							"success"=>true,
+							"update"=>false
+						);
+						//update error end from here
+					}else{
+						//update success start from here
+						$array = array(
+							"success"=>true,
+							"update"=>true
+						);
+						//update success end from here
+					}
+					//validation success end from here
+				}
+
+				echo json_encode($array);
+
+				//request method post end from here
+			}else{
+				//REQUEST method !~ post start from here
+				echo '404';
+				//request method ! post end fropm here
+			}
+			//sessions available end form here
+	//	}else{
+			//sessions not available start from here
+	//		echo "404";
+			//session not available end from here
+	//	}
+
+	}
+
 }
 
 ?>

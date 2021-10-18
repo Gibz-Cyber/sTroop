@@ -34,7 +34,7 @@
                 <a class="nav-link active" aria-current="page" href="<?php echo base_url('/index.php/admin/clients'); ?>">Clients</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-signup">Active Ads</a>
+                <a class="nav-link" href="<?php echo base_url('/index.php/admin/activeAds'); ?>">Active Ads</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="aboutus.html">Update Requests</a>
