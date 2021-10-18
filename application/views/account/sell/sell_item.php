@@ -70,6 +70,7 @@
                   <h4 class="d-flex justify-content-center"><?php echo $_GET['adCategory']; ?></h4>
                     <div class="cta-info w-100  text-center ">
                       <h4 class="fw-light p1 p-3 text-Capitalize ">Select <?php echo $_GET['adCategory']; ?> Category</h4>
+                      <form action="#" class="row" id="meta-data">
                       <div class="select-electronics">
                         <select name="cases" id="cases">
                               <!--cases start from here-->
@@ -232,14 +233,14 @@
               <!--left corner category selector end from here-->
                 <div class="col-12 col-lg-9 shadow mt-3 p-1">
                     <div class="form w-100 pb-2">
-                        <form action="#" class="row" id="meta-data">
+                        
 
                             <!-- start step 1 for categories -->
                             <div class="step-1">
                                 <h2 class="text-center">Step 1</h3>
 
-                                  <div id="1-step1" class="step1">
-                                    <div class="row">
+                                 <!-- <div id="1-step1" class="step1">
+                                    <div class="row">-->
                                           <!--<div class="col-sm-6 col-md-6">
                                             <div class="form-group">
                                               <label>Device type (Required)</label>
@@ -256,7 +257,7 @@
                                                 </select>
                                             </div>
                                           </div>-->
-                                          <div class="col-sm-6 col-md-6">
+                                          <!--<div class="col-sm-6 col-md-6">
                                         <div class="form-group">
                                           <label>Condition (Required)</label><br>
                                           <input type="radio" name="con" value="New" required>New<br>
@@ -264,7 +265,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                  </div>
+                                  </div>-->
     
                                <!-- <div id="2-step1" class="step1">
                                   <div class="form-group">
@@ -614,7 +615,7 @@
                                     <label>Main image (Required)</label>
                                     <div class="custom-file">
                                         <input type="file" accept="image/*" id="main_image" class="custom-file-input" name="mainimg" onchange="return fileValidation1(1)" required>
-                                            <label class="custom-file-label" for="customFile"><button class='btn btn-danger btn-sm' id="del_main">Delete</button></label>
+                                            <label class="custom-file-label" for="customFile"><button class='btn btn-danger btn-sm' id="del_main" onclick="deleteImg(1)">Delete</button></label>
                                     </div><br>
                                     <div class="progress" style="height: 1px;" id="main_img_prog_container">
                                       <div id="main_img_progress" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -625,7 +626,7 @@
                                     <label>Image 1 (Optional)</label>
                                         <div class="custom-file">
                                             <input type="file" accept="image/*" id="sub_image_1" class="custom-file-input" name="subimg1" onchange="return fileValidation1(2)" >
-                                                  <label class="custom-file-label" for="customFile"><button class='btn btn-danger btn-sm' id="del_sub_1">Delete</button></label>
+                                                  <label class="custom-file-label" for="customFile"><button class='btn btn-danger btn-sm' id="del_sub_1" onclick="deleteImg(2)">Delete</button></label>
                                             </div><br>
 
                                             <!--progress-->
@@ -639,7 +640,7 @@
                                 <div class="form-group">
                                     <div class="custom-file">
                                         <input type="file" accept="image/*" id="sub_image_2" class="custom-file-input" name="subimg2" onchange="return fileValidation1(3)" >
-                                            <label class="custom-file-label" for="customFile"><button class='btn btn-danger btn-sm' id="del_sub_2">Delete</button></label>
+                                            <label class="custom-file-label" for="customFile"><button class='btn btn-danger btn-sm' id="del_sub_2" onclick="deleteImg(3)">Delete</button></label>
                                     </div><br>
 
                                     <!--progress-->
@@ -654,7 +655,7 @@
                                     <label>Image 3 (Optional)</label>
                                     <div class="custom-file">
                                          <input type="file" accept="image/*" id="sub_image_3" class="custom-file-input" name="subimg3" onchange="return fileValidation1(4)" >
-                                            <label class="custom-file-label" for="customFile"><button class='btn btn-danger btn-sm' id="del_sub_3">Delete</button></label>
+                                            <label class="custom-file-label" for="customFile"><button class='btn btn-danger btn-sm' id="del_sub_3" onclick="deleteImg(4)">Delete</button></label>
                                     </div><br>
 
                                     <!--progress-->
@@ -668,7 +669,7 @@
                                     <label>Image 4 (Optional)</label>
                                     <div class="custom-file">
                                         <input type="file" accept="image/*" id="sub_image_4" class="custom-file-input" name="subimg4" onchange="return fileValidation1(5)" >
-                                                  <label class="custom-file-label" for="customFile"><button class='btn btn-danger btn-sm' id="del_sub_4">Delete</button></label>
+                                                  <label class="custom-file-label" for="customFile"><button class='btn btn-danger btn-sm' id="del_sub_4" onclick="deleteImg(5)">Delete</button></label>
                                     </div><br>
 
                                     <!--progress-->
@@ -723,7 +724,7 @@
                                 <input type="hidden" id="image_3" name="image_3" value="">
                                 <input type="hidden" id="image_4" name="image_4" value="">
                                 <input type="hidden" id="image_5" name="image_5" value="">
-                                <input type="hidden" id="category" name="category" value="">
+                                <input type="hidden" id="category" name="category" value="<?php echo $_GET['adCategory']; ?>">
                                 <!--hidden data end from here-->
                             <div class="rounded border border-success shadow-sm p-3 mb-5 bg-white mx-auto col-md-9">
                                 <h4 align="center">Contact numbers</h4>
@@ -911,7 +912,7 @@
                     $("#sub_img_progress_2").css("width","0%");
                     $("#sub_2_img_prog_container").show();
                     $("#sub_img_progress_2").css("width","50%");
-
+                    
                   }else if(data == 4){
 
                     $("#sub_img_progress_3").css("width","0%");
@@ -944,26 +945,31 @@
 
                         $("#image_1").val(resdData.file);
                         $("#main_img_progress").css("width","100%");
+                        $("#del_main").show();
 
                       }else if(data == 2){
 
                         $("#image_2").val(resdData.file);
-                        $("#sub_img_progress_1").css.width("width","100%");
+                        $("#sub_img_progress_1").css("width","100%");
+                        $("#del_sub_1").show();
 
                       }else if(data == 3){
 
                         $("#image_3").val(resdData.file);
-                        $("#sub_img_progress_2").css.width("width","100%");
+                        $("#sub_img_progress_2").css("width","100%");
+                        $("#del_sub_2").show();
 
                       }else if(data == 4){
 
                         $("#image_4").val(resdData.file);
-                        $("#sub_img_progress_3").css.width("width","100%");
+                        $("#sub_img_progress_3").css("width","100%");
+                        $("#del_sub_3").show();
 
                       }else if(data == 5){
 
                         $("#image_5").val(resdData.file);
-                        $("#sub_img_progress_4").css.width("width","100%");
+                        $("#sub_img_progress_4").css("width","100%");
+                        $("#del_sub_4").show();
                         
                       }
                       //upload success end form here
@@ -979,6 +985,50 @@
 
         function elementObj(id){
           return document.getElementById(id);
+        }
+
+        function deleteImg(img){
+
+          if(img == 1){
+
+            $("#main_image").val(null);
+            $("#image_1").val(null);
+            $("#del_main").hide();
+            $("#main_img_prog_container").hide();
+
+          }else if(img == 2){
+
+            $("#sub_image_1").val(null);
+            $("#image_2").val(null);
+            $("#del_sub_1").hide();
+            $("#sub_1_img_prog_container").hide();
+
+          }else if(img == 3){
+
+            $("#sub_image_2").val(null);
+            $("#image_3").val(null);
+            $("#del_sub_2").val(null);
+            ("#del_sub_2").hide();
+            $("#sub_2_img_prog_container").hide();
+
+          }else if(img == 4){
+
+            $("#sub_image_3").val(null);
+            $("#image_4").val(null);
+            $("#del_sub_3").val(null);
+            ("#del_sub_3").hide();
+            $("#sub_3_img_prog_container").hide();
+
+          }else if(img == 5){
+
+            $("#sub_image_4").val(null);
+            $("#image_5").val(null);
+            $("#del_sub_4").val(null);
+            ("#del_sub_4").hide();
+            $("#sub_4_img_prog_container").hide();
+
+          }
+
         }
 
       </script>

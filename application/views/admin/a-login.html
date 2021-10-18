@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Admin</title>
+    <link rel="stylesheet" href="<?php echo base_url('/assets/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('/assets/css/fontawesome.css'); ?>">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;600;900&display=swap" rel="stylesheet">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="container p-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 border shadow">
+                <div class="a-heading text-center p-2">
+                    <h3 class="display-4">
+                        Admin Login
+                    </h3>
+                </div>
+                 <!-- login form start form -->
+                 <form class="form-horizontal signup-form p-3" action="#">
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email address</label>
+                      <input type="email" name="email" class="form-control" id="email">
+                      <small id="email-error" style="color: red;"></small>
+                    </div>
+  
+                    <div class="mb-3">
+                      <label for="Password" class="form-label">Password</label>
+                      <input type="password" name="pwd" id="Password" class="form-control" aria-describedby="passwordHelpBlock">
+                      <small id="pwd-error" style="color: red;"></small>
+                    </div>
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                      <label class="form-check-label" for="flexSwitchCheckDefault">Show Password</label>
+                    </div>
+
+                    <div class="alert alert-danger" id="alert-id">
+                      <p align="center">No records found. Please enter your correct credentials and try again.</p>
+                    </div>
+                    
+                      <div class="submit-btn mt-4 text-center">
+                        <a href="#"><button type="button" class="rounded-pill" id="login" value="#">Log in</button></a>
+                      </div>
+                  
+                  </form><br><br>
+                  <div class="logo text-center p-3">
+                    <img src="../assets/images/logo/logo_black.jpg" alt="logo image" width="60" height="60">&nbsp;&nbsp;&nbsp;&copy;SupplyTroopLK
+                  </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+      
+        $(document).ready(function(){
+
+          $("#alert-id").hide();
+
+          $("#login").click(function(event){
+            event.preventDefault();
+            var btn = document.getElementById("login");
+            $.ajax({
+              url:"<?php echo base_url('index.php/AdminDataProcessor/login'); ?>",
+              data:$("form").serialize(),
+              dataType:"json",
+              type:"POST",
+              beforeSend:function(){
+
+              },success:function(respData){
+
+                if(!respData.success){
+                  //form validation error start form here
+                  if(respData.email != ""){
+                    $("#email-error").html(respData.email);
+                  }
+
+                  if(respData.pwd != ""){
+                    $("#pwd-error").html(respData.pwd);
+                  }
+                  //form validation error end from here
+                }else{
+                  //form validation success start form here
+                  if(!respData.login){
+
+                    $("#alert-id").show();
+
+                  }else{
+
+                    window.location.href="<?php echo base_url('/index.php/admin/dashboard'); ?>";
+
+                  }
+                  //form validation success end from here
+                }
+
+              }
+            });
+          });
+
+        });
+
+    </script>
+
+    
+</body>
+</html>

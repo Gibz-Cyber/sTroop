@@ -368,6 +368,119 @@ class UserDataProcessor extends CI_Controller{
 
 	}
 
+	public function postAd(){
+
+		if($this->checkSessions()){
+			//sessons available start from here
+			if($_SERVER['REQUEST_METHOD'] == "POST"){
+				//request method post start from here
+				$this->load->library("form_validation");
+
+				$this->form_validation->set_rules("cases","cases","required");
+				$this->form_validation->set_rules("district","district","required");
+				$this->form_validation->set_rules("title","title","required|max_length[25]");
+				$this->form_validation->set_rules("description","description","required|max_length[800]");
+				$this->form_validation->set_rules("price","price","required|numeric|max_length[10]");
+				$this->form_validation->set_rules("nego","negotiable status","required");
+				$this->form_validation->set_rules("category","category","required");
+				$this->form_validation->set_rules("image_1","main image","required");
+
+				if(!$this->form_validation->run()){
+					//form validation error start from here
+
+					$array = array(
+						"success"=>false,
+						"cases"=>form_error("cases"),
+						"district"=>form_error("district"),
+						"title"=>form_error("title"),
+						"desc"=>form_error("description"),
+						"price"=>form_error("price"),
+						"nego"=>form_error("nego"),
+						"category"=>form_error("category"),
+						"image_1"=>form_error("image_1")
+					);
+
+					//form validation error end form here
+				}else{
+					//form validation success start form here
+
+					$this->load->library("Filter");
+
+					$subCat = $this->filter->xssFilter($this->input->post("cases"));
+					$mainCat = $this->filter->xssFilter($this->input->post("category"));
+					$dist = $this->filter->xssFilter($this->input->post("district"));
+					$title = $this->filter->xssFilter($this->input->post("title"));
+					$desc = $this->filter->xssFilter($this->input->post("description"));
+					$price = $this->filter->xssFilter($this->input->post("price"));
+					$nego = $this->filter->xssFilter($this->input->post("nego"));
+					$mainImg = base_url('/ad_images/sell_resized/').$this->filter->xssFilter($this->input->post("image_1"));
+
+					if(empty($this->input->post("image_2"))){
+						$subImg1 = "NULL";
+					}else{
+						$subImg1 = base_url('/ad_images/sell_resized/').$this->input->post("image_2");
+					}
+
+					if(empty($this->input->post("image_3"))){
+                        $subImg2 = "NULL";
+					}else{
+                        $subImg2 = base_url('/ad_images/sell_resized/').$this->input->post("image_3");
+					}
+
+					if(empty($this->input->post("image_4"))){
+                        $subImg3 = "NULL";
+					}else{
+						$subImg3 = base_url('/ad_images/sell_resized/').$this->input->post("image_4");
+					}
+
+					if(empty($this->input->post("image_5"))){
+						$subImg4 = "NULL";
+					}else{
+						$subImg4 = base_url('/ad_images/sell_resized/').$this->input->post("image_5");
+					}
+
+					$this->load->library("AdStatus");
+					$this->load->library("Category");
+					$this->load->model("UserDataProcessorModel");
+
+					$res = $this->UserDataProcessorModel->sellPosting($this->session->userdata("user_id"),$this->category->getSell(),$mainCat,$subCat,$dist,$title,$desc,$price,$nego,$this->adstatus->getPending(),$mainImg,$subImg1,$subImg2,$subImg3,$subImg4);
+
+					if($res === false){
+						//ad posted error start from here
+						$array = array(
+							"success"=>true,
+							"ad"=>false
+						);
+						//ad posted error end from here
+					}else{
+						//adf posted success start from here
+						$array = array(
+							"success"=>true,
+							"ad"=>true
+						);
+						//ad posted success end from here
+					}
+
+					//form validation success end from here
+				}
+
+				echo json_encode($array);
+
+				//request method post end from here
+			}else{
+				//request method ! post start from here
+				echo "404";
+				//request method ! post end from here
+			}
+			//sessions available end from here
+		}else{
+			//sessions not available start from here
+			echo "404";
+			//sessions not available end form here
+		}
+
+	}
+
 
 	public function uploadImages(){
 

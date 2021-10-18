@@ -179,6 +179,30 @@ class UserDataProcessorModel extends CI_Model{
 
 	}
 
+	public function sellPosting($userId,$type,$mainCategory,$subCategory,$dist,$title,$desc,$price,$nego,$adStatus,$img1,$img2,$img3,$img4,$img5){
+
+		$this->load->database();
+		date_default_timezone_set("Asia/Colombo");
+		$date = date("Y-m-d H:i:s");
+		$sql = "INSERT INTO ad(user_id,ad_type,main_category,sub_category,district,title,description,ad_status,posted_timestamp) VALUES(?,?,?,?,?,?,?,?,?);";
+		$this->db->query($sql,array($userId,$type,$mainCategory,$subCategory,$dist,$title,$desc,$adStatus,$date));
+		$affect = $this->db->affected_rows();
+
+		if($affect != 1){
+			return false;
+		}else{
+
+			$lastId = $this->db->insert_id();
+			$sql = "INSERT INTO ad_image(ad_id,image_1,image_2,image_3,image_4,image_5) VALUES (?,?,?,?,?,?);";
+			$this->db->query($sql,array($lastId,$img1,$img2,$img3,$img4,$img5));
+
+			$sql = "INSERT INTO pricing(ad_id,price,nego_status) VALUES (?,?,?);";
+			$this->db->query($sql,array($lastId,$price,$nego));
+			$this->db->close();
+		}
+
+	}
+
 }
 
 ?>
