@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2021 at 06:02 PM
+-- Generation Time: Oct 19, 2021 at 06:49 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.28
 
@@ -84,6 +84,13 @@ CREATE TABLE `user` (
   `last_login` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `user_email`, `user_password`, `user_type`, `user_status`, `last_login`) VALUES
+(1, 'Test', 'Test', 'tester@tester.com', 'e24dc2aa55ff1fb16ef7b4facf4565c5', 'admin', 1, '2021-10-19 16:38:36');
+
 -- --------------------------------------------------------
 
 --
@@ -146,7 +153,7 @@ ALTER TABLE `ad`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

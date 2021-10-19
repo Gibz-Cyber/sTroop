@@ -48,6 +48,29 @@ public function allAds(){
 
 }
 
+	public function adView(){
+
+		if(isset($_GET['ad'])){
+
+			if(is_numeric($_GET['ad'])){
+
+				$this->load->model("HomeModel");
+				$this->load->library("AdStatus");
+				$data['adData'] = $this->HomeModel->getAdData($this->adstatus->getActive(),$_GET['ad']);
+
+				$this->load->view("adView",$data);
+
+			}else{
+				echo "403 fobidden";
+			}
+
+		}else{
+			echo "access denied";
+		}
+
+
+	}
+
 }
 
 ?>

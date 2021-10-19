@@ -119,7 +119,7 @@
             
                           <!-- start ad grid -->
                           <div class="row">
-                              <div class="col-9 col-lg-4 col-md-4 product-list product-grid">
+                              
                                 
                                 <?php
 
@@ -131,9 +131,9 @@
 
                                     foreach($adData as $individualAd){
                                       ?>
-
+                                      <div class="col-12 col-lg-4 col-md-4">
                                       <div class="card"><!--card-->
-                                  <a href="ad_description/description.view.php"><!--href-->
+                                  <a href="<?php echo base_url('/index.php/home/adView?ad=').$individualAd->ad_id; ?>"><!--href-->
                                     <div class="d-flex justify-content-between align-items-center"><!--center-->
                                         <div class="align-items-center time"><!--time start from here-->
                                           <i class="bi bi-clock"></i><?php echo $individualAd->posted_date; ?>
@@ -150,7 +150,7 @@
                                     
                                   </a><!--hrerf-->
                                 </div><!--card-->
-
+                                </div> 
 
                                       <?php
 
@@ -160,7 +160,7 @@
 
                                 ?>
                                 
-                              </div> 
+                              
                             </div>
 
                         </div>

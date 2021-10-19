@@ -62,6 +62,21 @@ class HomeModel extends CI_Model{
 
 	}
 
+	public function getAdData($adStatus,$adId){
+
+		$this->load->database();
+		$sql = "SELECT * FROM ad INNER JOIN ad_image ON ad.ad_id = ad_image.ad_id INNER JOIN user_number ON ad.user_id = user_number.user_id INNER JOIN pricing ON ad.ad_id = pricing.ad_id INNER JOIN user ON ad.user_id = user.user_id WHERE ad.ad_status = ? AND ad.ad_id = ?;";
+		$query = $this->db->query($sql,array($adStatus,$adId));
+		$this->db->close();
+
+		if($query->num_rows() > 0){
+			return $query->row();;
+		}else{
+			return false;
+		}
+
+	}
+
 }
 
 ?>

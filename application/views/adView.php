@@ -15,10 +15,10 @@
 </head>
 <body>
 
-     <!-- START THE NAVBAR -->
-     <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+    <!-- START THE NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="../index.php">
+            <a class="navbar-brand" href="#">
                 <img src="../assets/images/logo/logo.png" alt="logo image" width="60" height="60">&nbsp;&nbsp;&nbsp;SupplyTroopLK
                 
             </a>
@@ -28,65 +28,219 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../allads.php">All Ads</a>
+                <a class="nav-link active" aria-current="page" href="allads.php">All Ads</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">My Ads</a>
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-signup">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">About us</a>
               </li>
              <!--  <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
               </li> -->
-              <li class="nav-item">
-                  <a href="chat.php" class="nav-link">Messages<sup id="count" class="badge badge-danger"></sup>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Account
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="<?php echo base_url('/index.php/user/account'); ?>">My Account</a></li>
-                  <li><a class="dropdown-item" href="<?php echo base_url('/index.php/user/signOut'); ?>">Sign Out</a></li>
-                </ul>
-              </li>
             </ul>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#modal-login" >
+              <button type="button" class="rounded-pill btn-rounded">
+                Post an Ad
+              </button>
+            </a>
           </div>
         </div>
       </nav>
 
-      <!-- START THE POST AN AD SECTION -->
-      <section id="start-post-ad" class="post-ad">
-          <div class="container">
-            <?php
-              //welcome message start from here
+      <!-- START SECTION -->
+      <div class="container ad-description" style="margin-top:10rem;">
+        
+        <?php
 
-              if($this->session->flashdata("welcome_message") != ""){
-          echo "<div class='container' style='margin-top:100px; margin-bottom: -50px;'><h3>".$this->session->flashdata('welcome_message')."</h3></div>";
+        if($adData === false){
+        //ad error end from here
+        echo "<div class='alert alert-danger'><p align='center'>403 fobidden</p></div>";
+        //ad error end from here
+        }else{
+          //ad success start from here
+
+          if($adData->ad_type == "sell"){
+            
+            ?>
+            <div class="row">
+          <div class="col-12 col-md-8">
+            <!-- Carousel -->
+            <div id="demo" class="carousel slide p-2" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="<?php echo $adData->image_1; ?>" alt="" style="width: 100%" height="350">
+              </div>
+              <?php
+
+                if($adData->image_2 != "NULL"){
+
+                echo "<div class='carousel-item'>
+                <img src='{$adData->image_2}' alt='' style='width: 100%' height='350'>
+              </div>";
+
+                }
+
+
+                if($adData->image_3 != ""){
+                  echo "<div class='carousel-item'>
+                <img src='{$adData->image_3}' alt=''style='width: 100%' height='350'>
+              </div>";
+                }
+
+                 if($adData->image_4 != ""){
+                  echo "<div class='carousel-item'>
+                <img src='{$adData->image_4}' alt='' style='width: 100%' height='350'>
+              </div>";
+
+            }
+
+              if($adData->image_5 != ""){
+                  echo "<div class='carousel-item'>
+                <img src='{$adData->image_5}' alt='' style='width: 100%' height='350'>
+              </div>";
+                }
+
+              ?>
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#demo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+            </div>
+          </div>
+        </div>
+
+        <!--mobile numbers start from here-->
+        <div class="col-12 col-md-4">
+
+          <div class="border border rounded">
+            <br>
+            <h4 align='center'><?php echo $adData->first_name; ?></h4><hr>
+
+            <?php
+
+              if($adData->phone_1 != "NULL"){
+
+                echo "<h5 align='center'>{$adData->phone_1}</h5>";
 
               }
 
-              //welcome message end from here
+              if($adData->phone_2 != "NULL"){
+
+                echo "<h5 align='center'>{$adData->phone_2}</h5>";
+
+              }
+
+               if($adData->phone_3 != "NULL"){
+
+                echo "<h5 align='center'>{$adData->phone_3}</h5>";
+
+              }
+
             ?>
-              <div class="post-ad-title w-100 pt-5 mt-5 text-center">
-                <h3 class="display-4--title mt-1 fw-bold"> Now you can post your ads free on SupplyTroopLK</h3>
+
+          </div>
+
+        </div>
+        <!--mobile numbers end froom here-->
+      </div>
+            <?php
+
+          }else{
+          
+            ?>
+
+            <div class="mx-auto col-sm-12 col-md-6">
+
+              <div class="border border rounded">
+                <br>
+                <h4 align='center'><?php echo $adData->first_name; ?></h4><hr>
+
+                <?php
+
+                  if($adData->phone_1 != "NULL"){
+
+                    echo "<h5 align='center'>{$adData->phone_1}</h5>";
+
+                  }
+
+                  if($adData->phone_2 != "NULL"){
+
+                    echo "<h5 align='center'>{$adData->phone_2}</h5>";
+
+                  }
+
+                   if($adData->phone_3 != "NULL"){
+
+                    echo "<h5 align='center'>{$adData->phone_3}</h5>";
+
+                  }
+
+                ?>
+
               </div>
 
-              <div class="mob mt-5 d-flex">
-                <div class="container">
-                    <div class="list-group text-center shadow">
-                        <h4 class="list-group-item-heading text-white p-4">Sell Something</h4>
-                        <a href="<?php echo base_url('/index.php/user/sell'); ?>" class="list-group-item">Sell an Item or Service</a>
-                    </div>
-                </div>
-                <div class="container" >
-                    <div class="list-group text-center shadow">
-                        <h4  class="list-group-item-heading text-white p-4">Look for Something</h4>
-                        <a href="<?php echo base_url('/index.php/user/buy'); ?>" class="list-group-item">Look for Buy Something</a>
-                    </div>
-                </div>
             </div>
+
+            <?php
+
+          }
+
+          ?>
+
+          <h4 align="center"><?php echo $adData->title; ?></h4>
+
+          <div class="row">
+
+            <div class="col-sm-12 col-md-8">
+
+              <p><?php echo $adData->description; ?></p>
+
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+
+              <ul class="list-group">
+                <li class="list-group-item">Main Category : <strong><?php echo $adData->main_category; ?></strong></li>
+                <li class="list-group-item">Sub Category : <strong><?php echo $adData->sub_category; ?></strong></li>
+                <li class="list-group-item">Posted : <strong><?php echo $adData->posted_timestamp; ?></strong></li>
+                <li class="list-group-item">Price : <strong><?php echo  $adData->price; ?> LKR</strong></li>
+                <?php
+                  if($adData->nego_status != "NULL"){
+                    echo "<li class='list-group-item'>Price Status : <strong>{$adData->nego_status}</strong></li>";
+                  }
+                ?>
+              </ul>
+
+            </div>
+
           </div>
-      </section>
+
+          <?php
+
+          //ad success end from here
+        }
+
+        ?>
+
+    </div>
+      
+
 
 
      <!-- START THE FOOTER -->
@@ -166,7 +320,7 @@
             <div class="col-12 col-sm-6 col-lg-6 company-name">
               <h5 class="text-capitalize">SupplyTroopLK</h5>
               <div class="company-logo">
-                <img src="../assets/images/logo/logo.png"  alt="logo" width="50" height="50">
+                <img src="../../../assets/images/logo/logo.png"  alt="logo" width="50" height="50">
               </div>
               <hr class="bg-white d-inline-block mb-4" style="width: 120px; height: 2px;">
             </div>
@@ -213,7 +367,6 @@
       </a>
 
 
-    
-    <script src="<?php echo base_url('/assets/js/bootstrap.bundle.min.js'); ?>"></script>
+      <script src="<?php echo base_url('/assets/js/bootstrap.bundle.min.js'); ?>"></script>
 </body>
 </html>

@@ -80,146 +80,146 @@
                                   //electronics category start from here
                                   ?>
                                   <option value="">--Select--</option>
-                                  <option value="1-step1" >Development boards & accessories</option>
-                                  <option value="2-step1" >Air condition & accessories</option>
-                                  <option value="3-step1" >video games, consoles & accessories</option>
-                                  <option value="4-step1" >Electronic appliances for home</option>
-                                  <option value="5-step1" >Mobile phone accessories</option>
-                                  <option value="6-step1" >Computers & tablets</option>
-                                  <option value="7-step1" >Mobile Phones</option>
-                                  <option value="8-step1" >computer accessories</option>
-                                  <option value="9-step1" >video accessories</option>
-                                  <option value="10-step1" >Tv</option>
-                                  <option value="11-step1" >Cameras</option>
-                                  <option value="12-step1" >Audio</option>
-                                  <option value="13-step1" >Other Electronics</option>
+                                  <option value="Development boards and accessories" >Development boards & accessories</option>
+                                  <option value="Air condition and accessories" >Air condition & accessories</option>
+                                  <option value="video games, consoles and accessories" >video games, consoles & accessories</option>
+                                  <option value="Electronic appliances for home" >Electronic appliances for home</option>
+                                  <option value="Mobile phone accessories" >Mobile phone accessories</option>
+                                  <option value="Computers & tablets" >Computers & tablets</option>
+                                  <option value="Mobile Phones" >Mobile Phones</option>
+                                  <option value="computer accessories" >computer accessories</option>
+                                  <option value="video accessories" >video accessories</option>
+                                  <option value="Tv" >Tv</option>
+                                  <option value="Cameras" >Cameras</option>
+                                  <option value="Audio" >Audio</option>
+                                  <option value="Other Electronics" >Other Electronics</option>
                                   <?php
                                   //electronics category end from here
                                 }else if($_GET['adCategory'] == "vehicles"){
                                   //vehicles category start from here
                                   ?>
                                   <option value="">--Select--</option>
-                                  <option value="1-step1">Auto parts and accessories</option>
-                                  <option value="2-step1">Motor bikes</option>
-                                  <option value="3-step1">Vans buses and Lorries</option>
-                                  <option value="4-step1">escavation vehicles</option>
-                                  <option value="5-step1">Bicycle</option>
-                                  <option value="6-step1">Tuk Tuk</option>
-                                  <option value="7-step1">Car</option>
-                                  <option value="8-step1">water crafts</option>
+                                  <option value="Auto parts and accessories">Auto parts and accessories</option>
+                                  <option value="Motor bikes">Motor bikes</option>
+                                  <option value="Vans buses and Lorries">Vans buses and Lorries</option>
+                                  <option value="escavation vehicles">escavation vehicles</option>
+                                  <option value="Bicycle">Bicycle</option>
+                                  <option value="Tuk Tuk">Tuk Tuk</option>
+                                  <option value="Car">Car</option>
+                                  <option value="water crafts">water crafts</option>
                                   <?php
                                   //vehicles category end from here
                                 }else if($_GET['adCategory'] == "leisure"){
                                   //leisure category start from here
                                   ?>
-                                  <option value="0">--Select--</option>
-                                  <option value="1-step1">Art, Books, Music and Videos</option>
-                                  <option value="2-step1">Rc Vehicles and accessories</option>
-                                  <option value="3-step1">Events and Tickets</option>
-                                  <option value="4-step1">Other Hobby Items</option>
-                                  <option value="5-step1">Musical Instruments</option>
+                                  <option value="">--Select--</option>
+                                  <option value="Art, Books, Music and Videos">Art, Books, Music and Videos</option>
+                                  <option value="Rc Vehicles and accessories">Rc Vehicles and accessories</option>
+                                  <option value="Events and Tickets">Events and Tickets</option>
+                                  <option value="Other Hobby Items">Other Hobby Items</option>
+                                  <option value="Musical Instruments">Musical Instruments</option>
                                   <?php
                                   //leisure category end from here
                                 }else if($_GET['adCategory'] == "properties"){
                                   //properties category start from here
                                   ?>
-                                  <option value="0">--Select--</option>
-                                  <option value="1-step1">Apartments</option>
-                                  <option value="2-step1">Commercial Properties</option>
-                                  <option value="3-step1">Houses</option>
-                                  <option value="4-step1">Lands</option>
+                                  <option value="">--Select--</option>
+                                  <option value="Apartments">Apartments</option>
+                                  <option value="Commercial Properties">Commercial Properties</option>
+                                  <option value="Houses">Houses</option>
+                                  <option value="Lands">Lands</option>
                                   <?php
                                   //properties category end from here
                                 }else if($_GET['adCategory'] == "services"){
                                   //services category start from here
                                   ?>
-                                  <option value="0">--Select--</option>
-                                  <option value="1-step1">Domestic services</option>
-                                  <option value="2-step1">Event services</option>
-                                  <option value="3-step1">Other services</option>
-                                  <option value="4-step1">Trade services</option>
-                                  <option value="1-step1">Salon</option>
-                                  <option value="2-step1">IT services</option>
+                                  <option value="">--Select--</option>
+                                  <option value="Domestic services">Domestic services</option>
+                                  <option value="Event services">Event services</option>
+                                  <option value="Other services">Other services</option>
+                                  <option value="Trade services">Trade services</option>
+                                  <option value="Salon">Salon</option>
+                                  <option value="IT services">IT services</option>
                                   <?php
                                   //sercvises category end from here
                                 }else if($_GET['adCategory'] == "kids items"){
                                   //KIDS ITEMS START FROM HERE
                                   ?>
-                                  <option value="1-step1">Children items</option>
+                                  <option value="Children items">Children items</option>
                                   <?php
                                   //KIDS ITEMS END FROM HERE
                                 }else if($_GET['adCategory'] == "fashion"){
                                   //fashion start from here
                                   ?>
-                                  <option value="0">--Select--</option>
-                                  <option value="1-step1">Bags & Luggages</option>
-                                  <option value="2-step1">Other Fashion Accessories</option>
-                                  <option value="3-step1">Personal Accessories</option>
-                                  <option value="4-step1">Clothes</option>
-                                  <option value="1-step1">Jewellery</option>
-                                  <option value="2-step1">Footwear</option>
-                                  <option value="4-step1">Optacle Items</option>
-                                  <option value="1-step1">Salon Accessories</option>
-                                  <option value="2-step1">Watches</option>
+                                  <option value="">--Select--</option>
+                                  <option value="Bags and Luggages">Bags & Luggages</option>
+                                  <option value="Other Fashion Accessories">Other Fashion Accessories</option>
+                                  <option value="Personal Accessories">Personal Accessories</option>
+                                  <option value="Clothes">Clothes</option>
+                                  <option value="Jewellery">Jewellery</option>
+                                  <option value="Footwear">Footwear</option>
+                                  <option value="Optacle Items">Optacle Items</option>
+                                  <option value="Salon Accessories">Salon Accessories</option>
+                                  <option value="Watches">Watches</option>
                                   <?php
                                   //fashion end from here
                                 }else if($_GET['adCategory'] == "sports"){
                                   //sports start from here
                                   ?>
-                                  <option value="0">--Select--</option>
-                                  <option value="1-step1">Sport Equipments</option>
-                                  <option value="2-step1">Sport Supplyments</option>
-                                  <option value="3-step1">Other sport items</option>
+                                  <option value="">--Select--</option>
+                                  <option value="Sport Equipments">Sport Equipments</option>
+                                  <option value="Sport Supplyments">Sport Supplyments</option>
+                                  <option value="Other sport items">Other sport items</option>
                                   <?php
                                   //sports end from here
                                 }else if($_GET['adCategory'] == "education"){
                                   //education start from here
                                   ?>
-                                  <option value="0">--Select--</option>
-                                  <option value="1-step1">Higher Education</option>
-                                  <option value="2-step1">Other Education</option>
-                                  <option value="3-step1">Tuition Classes</option>
-                                  <option value="4-step1">Text Books</option>
+                                  <option value="">--Select--</option>
+                                  <option value="Higher Education">Higher Education</option>
+                                  <option value="Other Education">Other Education</option>
+                                  <option value="Tuition Classes">Tuition Classes</option>
+                                  <option value="Text Books">Text Books</option>
                                   <?php
                                   //education start from here
                                 }else if($_GET['adCategory'] == "industrial"){
                                   //industrial start from here
                                   ?>
-                                  <option value="0">--Select--</option>
-                                  <option value="1-step1">Industrial Tools</option>
-                                  <option value="2-step1">Generators</option>
-                                  <option value="3-step1">Healthcare Equipments</option>
-                                  <option value="4-step1">Office Equipments</option>
-                                  <option value="3-step1">Other Business & Industry</option>
+                                  <option value="">--Select--</option>
+                                  <option value="Industrial Tools">Industrial Tools</option>
+                                  <option value="Generators">Generators</option>
+                                  <option value="Healthcare Equipments">Healthcare Equipments</option>
+                                  <option value="Office Equipments">Office Equipments</option>
+                                  <option value="Other Business and Industry">Other Business & Industry</option>
                                   <?php
                                   //industrial end from here
                                 }else if($_GET['adCategory'] == "home and garden"){
                                   //home and garden start from here
                                   ?>
-                                  <option value="0">--Select--</option>
-                                  <option value="1-step1">Bathroom Fittings & Accessories</option>
-                                  <option value="2-step1">Building Items & Tools</option>
-                                  <option value="3-step1">Garden Items & Tools</option>
-                                  <option value="4-step1">Home Decorations</option>
-                                  <option value="3-step1">Furniture</option>
-                                  <option value="4-step1">Kitchen Items</option>
-                                  <option value="3-step1">Other Items</option>
+                                  <option value="">--Select--</option>
+                                  <option value="Bathroom Fittings and Accessories">Bathroom Fittings & Accessories</option>
+                                  <option value="Building Items and Tools">Building Items & Tools</option>
+                                  <option value="Garden Items and Tools">Garden Items & Tools</option>
+                                  <option value="Home Decorations">Home Decorations</option>
+                                  <option value="Furniture">Furniture</option>
+                                  <option value="Kitchen Items">Kitchen Items</option>
+                                  <option value="Other Items">Other Items</option>
                                   <?php
                                   //home and garden end from here
                                 }else if($_GET['adCategory'] == "food and agriculture"){
                                   //food and agriculture start from here
                                   ?>
-                                  <option value="0">--Select--</option>
-                                  <option value="1-step1">Farming Tools, Machinery & Accessories</option>
-                                  <option value="2-step1">Other Foods & Agriculture</option>
-                                  <option value="3-step1">Crops, Seeds & Plants</option>
-                                  <option value="4-step1">Foods</option>
+                                  <option value="">--Select--</option>
+                                  <option value="Farming Tools, Machinery and Accessories">Farming Tools, Machinery & Accessories</option>
+                                  <option value="Other Foods and Agriculture">Other Foods & Agriculture</option>
+                                  <option value="Crops, Seeds and Plants">Crops, Seeds & Plants</option>
+                                  <option value="Foods">Foods</option>
                                   <?php
                                   //food and agriculture end from here
                                 }else if($_GET['adCategory'] == "other"){
                                   //other start form here
                                   ?>
-                                  <option value="1-step1">Other</option>
+                                  <option value="Other">Other</option>
                                   <?php
                                   //other end from here
                                 }
@@ -899,31 +899,26 @@
           var form_data = new FormData();
           if(data == 1){
           
-            alert("main");
             var urlData = "<?php echo base_url('index.php/UserDataProcessor/uploadMainImage'); ?>";
             form_data.append("main_image", elementObj("main_image").files[0]);
           
           }else if( data == 2){
 
-            alert("sub_1");
             var urlData = "<?php echo base_url('index.php/UserDataProcessor/uploadsubImage1'); ?>";
             form_data.append("sub_image_1", elementObj("sub_image_1").files[0]);
 
           }else if(data == 3){
 
-            alert("sub_2");
             var urlData = "<?php echo base_url('index.php/UserDataProcessor/uploadsubImage2'); ?>";
             form_data.append("sub_image_2", elementObj("sub_image_2").files[0]);
 
           }else if(data == 4){
 
-            alert("sub_3");
             var urlData = "<?php echo base_url('index.php/UserDataProcessor/uploadsubImage3'); ?>";
             form_data.append("sub_image_3", elementObj("sub_image_3").files[0]);
 
           }else if(data == 5){
 
-            alert("sub_4");
             var urlData = "<?php echo base_url('index.php/UserDataProcessor/uploadsubImage4'); ?>";
             form_data.append("sub_image_4", elementObj("sub_image_4").files[0]);
 
