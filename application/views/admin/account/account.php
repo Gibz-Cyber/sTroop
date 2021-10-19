@@ -34,9 +34,6 @@
                 <a class="nav-link" href="<?php echo base_url('/index.php/admin/activeAds'); ?>">Active Ads</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="aboutus.html">Update Requests</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/index.php/admin/pendingAds'); ?>">Pending Ads</a>
               </li>
               <li class="nav-item">
@@ -56,20 +53,6 @@
       <section id="account" class="account-section">
           <div class="container">
             <div class="title mx-auto col-md-8 border border-primary rounded shadow-lg p-3 mb-5 bg-white">
-          <h4 class="text-center">Change account name.</h4><br>
-          <hr>
-      <form method = "post" id="change_name">
-        <div class="form-group">
-          <label>Your first name</label><br><br>
-          <input type="text" name="name" id="name" class="form-control" value="">
-          <small id="name_error" style="color: red;"></small>
-        </div><br>
-
-            <input type="hidden" name="type" value="86">
-            <button type="submit" class="btn btn-outline-primary" id="c_name">Change Name <span id="change_name_spinner"class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                <span class="sr-only">Loading...</span></button>
-            <br><br>
-            </form>
 
       <hr>
           <h4 align="center">Change account password.</h4><br>
@@ -100,7 +83,7 @@
           <!--add an admin start form here-->
 
           <h4 align="center">Add an admin.</h4><br>
-          <form method="post" id="change_password">
+          <form method="post" id="add_admin_form">
                 <div class="form-group">
               <label>First Name</label>
               <input type="text" required name="fname" class="form-control" placeholder="First name of new Admin">
@@ -129,7 +112,8 @@
             <div class="form-group">
               <input type="checkbox" onclick="adminShowPwd()"> Show password
             </div><br>
-              <button class="btn btn-outline-primary" id="add_admin">Add Admin <span id="change_password_spinner"class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <div class="alert alert-danger" id="admin-warning"><p>Oops! something went wrong! please try again later.</p></div>
+              <button class="btn btn-outline-primary" id="add_admin">Add Admin <span id="add_admin_spinner"class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 <span class="sr-only">Loading...</span></button>
                 <br><br>
           </form> 
@@ -176,6 +160,145 @@
           }
 
         }
+
+        $(document).ready(function(){
+
+          $("#add_admin_spinner").hide();$("#admin-warning").hide();$("#change_password_spinner").hide();
+
+          $("#add_admin").click(function(event){
+            event.preventDefault();
+
+            var btn = document.getElementById("add_admin");
+
+            $.ajax({
+
+              url:"<?php echo base_url('/index.php/AdminDataProcessor/addAdmin'); ?>",
+              data:$("#add_admin_form").serialize(),
+              dataType:"json",
+              type:"POST",
+              beforeSend:function(){
+
+                $("#a-name-error").html(null);$("#a-lname-error").html(null);$("#a-email-error").html(null);$("#a-pwd-error").html(null);$("#a-rpwd-error").html(null);
+
+              },success:function(respData){
+
+                btn.disabled = false;
+                $("#add_admin_spinner").hide();
+
+                if(!respData.success){
+                  //form validation error start from here
+
+                  if(respData.fname != ""){
+                    $("#a-name-error").html(respData.fname);
+                  }
+
+                  if(respData.lname != ""){
+                    $("#a-lname-error").html(respData.lname);
+                  }
+
+                  if(respData.email != ""){
+                    $("#a-email-error").html(respData.email);
+                  }
+
+                  if(respData.a_pwd != ""){
+                    $("#a-pwd-error").html(respData.a_pwd);
+                  }
+
+                  if(respData.a_rpwd != ""){
+                    $("#a-rpwd-error").html(respData.a_rpwd);
+                  }
+
+                  //form validation error end from heer
+                }else{
+                  //form validation success start from here
+
+                  if(!respData.avail){
+                    $("#admin-warning").show()
+                  }else{
+
+                    if(!respData.added){
+                      $("#admin-warning").show();
+                    }else{ 
+
+                      alert("New addmin assigned successfully!");
+                      window.location.href=document.URL;
+
+                    }
+
+                  }
+
+                  //form validation success end from here
+                }
+
+              }
+
+            });
+
+          });
+
+          $("#c_pwd").click(function(event){
+            event.preventDefault();
+
+            $.ajax({
+              url:"<?php echo base_url('/index.php/AdminDataProcessor/changePassword'); ?>",
+              data:$("#change_password").serialize(),
+              dataType:"json",
+              type:"POST",
+              beforeSend:function(){
+
+                $("#current_pwd_error").html(null);$("#new_pwd_error").html(null);$("#repeat_pwd_error").html(null);
+
+              },success:function(respData){
+
+                if(!respData.success){
+                  //validation errro start from here
+
+                  if(respData.cpwd != ""){
+                    $("#current_pwd_error").html(respData.cpwd);
+                  }
+
+                  if(respData.npwd != ""){
+                    $("#new_pwd_error").html(respData.npwd);
+                  }
+
+                  if(respData.rpwd != ""){
+                    $("#repeat_pwd_error").html(respData.rpwd);
+                  }
+
+                  //validation error end from here
+                }else{
+                  //validation success start from here
+
+                  if(!respData.current){
+                    //current password error start form here
+                    alert("Entered current password is incorrect. Please enter your valid current password");
+                    //current password error end from here
+                  }else{ 
+                    //current password succes start from here
+
+                    if(!respData.update){
+                      //update error start from here
+                      alert("Update error! Please try again later");
+                      //update error end form gere
+                    }else{
+                      //update success start from here
+                      alert("Updated successfully!");
+                      window.location.href=document.URL;
+                      //update error end form here
+                    }
+
+                    //current password success end from here
+                  }
+
+                  //validation success end from here
+                }
+
+              }
+            });
+
+          });
+
+        });
 
       </script>
       <script src="<?php echo base_url('/assets/js/bootstrap.bundle.min.js'); ?>"></script>

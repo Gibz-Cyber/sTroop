@@ -37,9 +37,6 @@
                 <a class="nav-link" href="aboutus.html">Update Requests</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Pending Ads</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/index.php/admin/account'); ?>">Account</a>
               </li>
               <li class="nav-item">

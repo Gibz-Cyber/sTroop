@@ -35,7 +35,7 @@ class Admin extends CI_Controller{
 
 	public function dashboard(){
 
-		//if($this->checkSessions()){
+	if($this->checkSessions()){
 			//sessions available end from here
 			$this->load->model("AdminModel");
 			$this->load->library("UserType");
@@ -48,48 +48,48 @@ class Admin extends CI_Controller{
 			
 			$this->load->view("admin/account/dashboard",$data);
 			//sessions available end from here
-		//}else{
+		}else{
 			//sessions not available start from here
-		//	echo "404";
+			echo "404";
 			//sessions not available end form here
-		//}
+		}
 
 	}
 
 
 	public function clients(){
 
-	//	if($this->checkSessions()){
+		if($this->checkSessions()){
 
 		$this->load->model("AdminModel");
 		$data['result'] = $this->AdminModel->getClients();
 		$this->load->view("admin/account/clients",$data);
 
-	//	}else{
+		}else{
 			//sessions nor available staret from here
-	//		echo "404";
+			echo "404";
 			//sessions not avaiulable end form here
-	//	}
+		}
 
 	}
 
 	public function account(){
 
-		//if($this->checkSessions()){
+		if($this->checkSessions()){
 			//sessios available start from here
 			$this->load->view("admin/account/account");
 			//sessions available end from here
-		//}else{
+		}else{
 			//sessions not available start from here
-		//	echo "404";
+			echo "404";
 			//sessions not available end from here
-		//}
+		}
 
 	}
 
 	public function pendingAds(){
 
-	//	if($this->checkSessions()){
+		if($this->checkSessions()){
 			//sessions available start from here
 			$this->load->library("AdStatus");
 			$this->load->model("AdminModel");
@@ -97,17 +97,17 @@ class Admin extends CI_Controller{
 			$data['result'] = $this->AdminModel->getAdsData($this->adstatus->getPending());
 			$this->load->view("admin/account/pending_ads",$data);
 			//sessiona vailable end form hgere
-	//	}else{
+		}else{
 			//sesisons nor avaibale start from here
-	//		echo "404";
+			echo "404";
 			//sessions not avaibale end form ghere
-	//	}
+		}
 
 	}
 
 	public function activeAds(){
 
-	//	if($this->checkSessions()){
+		if($this->checkSessions()){
 			//sessions available start from here
 
 			$this->load->library("AdStatus");
@@ -117,11 +117,11 @@ class Admin extends CI_Controller{
 			$this->load->view("admin/account/active_ads",$data);
 
 			//sessions available end form here
-	//	}else{
+		}else{
 			//sessions not available end from here
-	//		echo "404";
+			echo "404";
 			//sessions not available end from here
-	//	}
+		}
 
 	}
 
