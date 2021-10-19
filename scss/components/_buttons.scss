@@ -1,0 +1,40 @@
+@use '../custom' as*;
+@use '../components/mixins' as *;
+
+.btn-rounded {
+  position: relative;
+  padding: 0.9375rem 1.25rem 0.9375rem 1.25rem;
+  font-weight: 700;
+  border: 0.1rem solid rgb($white, 0.6);
+  background-color: $white;
+  text-align: center;
+  font-size: large;
+  border-radius: 50px;
+
+  &:hover {
+    @include gradient;
+    color: $white;
+    border: 0.1rem solid rgb($white, 0.6);
+  }
+}
+
+.btnmessage {
+  @include gradient;
+  color: $white;
+}
+
+.rounded-pill {
+  position: relative;
+  padding: 0.9375rem 1.25rem 0.9375rem 1.25rem;
+  font-weight: 700;
+  border: 0.1rem solid rgb($primary, 0.6);
+  background-color: $white;
+  text-align: center;
+  font-size: large;
+
+  &:hover {
+    @include gradient;
+    color: $white;
+    border: 0.1rem solid rgb($white, 0.6);
+  }
+}

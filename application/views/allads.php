@@ -61,55 +61,50 @@
                             <h3 class="fw-light category-title">
                                 All categories
                             </h3>
-                            <a href="#" class="list-group-item list-group-item-action active" aria-current="true"> All ads</a>
-                            <a href="#" class="list-group-item list-group-item-action">Vehicles</a>
-                            <a href="#" class="list-group-item list-group-item-action">Electronics</a>
-                            <a href="#" class="list-group-item list-group-item-action">Property/Land</a>
-                            <a href="#" class="list-group-item list-group-item-action">leisure/hobby</a>
-                            <a href="#" class="list-group-item list-group-item-action">Services</a>
-                            <a href="#" class="list-group-item list-group-item-action">Kids Items</a>
-                            <a href="#" class="list-group-item list-group-item-action">Fashion</a>
-                            <a href="#" class="list-group-item list-group-item-action">Sports</a>
-                            <a href="#" class="list-group-item list-group-item-action">Education</a>
-                            <a href="#" class="list-group-item list-group-item-action">Industrial</a>
-                            <a href="#" class="list-group-item list-group-item-action">Home & Garden</a>
-                            <a href="#" class="list-group-item list-group-item-action">Food & Agriculture</a>
-                            <a href="#" class="list-group-item list-group-item-action">Other</a>
-                            <a class="list-group-item list-group-item-action disabled">Other</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=All')?>" class="list-group-item list-group-item-action active" aria-current="true"> All ads</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=Vehicles')?>" class="list-group-item list-group-item-action">Vehicles</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=Electronics')?>" class="list-group-item list-group-item-action">Electronics</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=Property/Land')?>" class="list-group-item list-group-item-action">Property/Land</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=leisure/hobby')?>" class="list-group-item list-group-item-action">leisure/hobby</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=Services')?>" class="list-group-item list-group-item-action">Services</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=Kids Items')?>" class="list-group-item list-group-item-action">Kids Items</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=Fashion')?>" class="list-group-item list-group-item-action">Fashion</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=Sports')?>" class="list-group-item list-group-item-action">Sports</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=Education')?>" class="list-group-item list-group-item-action">Education</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=Industrial')?>" class="list-group-item list-group-item-action">Industrial</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=Home & Garden')?>" class="list-group-item list-group-item-action">Home & Garden</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=Food & Agriculture')?>" class="list-group-item list-group-item-action">Food & Agriculture</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?main=Other')?>" class="list-group-item list-group-item-action">Other</a>
+                            
                             <div class="heading-line mb-5 mt-5"></div>
                         </div>
                         <div class="list-group list-group-flush">
                             <h3 class="fw-light category-title">
                                 District
                             </h3>
-                            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">All</a>
-                            <a href="#" class="list-group-item list-group-item-action">Vehicles</a>
-                            <a href="#" class="list-group-item list-group-item-action">Electronics</a>
-                            <a href="#" class="list-group-item list-group-item-action">Property/Land</a>
-                            <a href="#" class="list-group-item list-group-item-action">leisure/hobby</a>
-                            <a href="#" class="list-group-item list-group-item-action">Services</a>
-                            <a href="#" class="list-group-item list-group-item-action">Kids Items</a>
-                            <a href="#" class="list-group-item list-group-item-action">Fashion</a>
-                            <a href="#" class="list-group-item list-group-item-action">Sports</a>
-                            <a href="#" class="list-group-item list-group-item-action">Education</a>
-                            <a href="#" class="list-group-item list-group-item-action">Industrial</a>
-                            <a href="#" class="list-group-item list-group-item-action">Home & Garden</a>
-                            <a href="#" class="list-group-item list-group-item-action">Food & Agriculture</a>
-                            <a href="#" class="list-group-item list-group-item-action">Other</a>
-                            <a href="#" class="list-group-item list-group-item-action">Vehicles</a>
-                            <a href="#" class="list-group-item list-group-item-action">Electronics</a>
-                            <a href="#" class="list-group-item list-group-item-action">Property/Land</a>
-                            <a href="#" class="list-group-item list-group-item-action">leisure/hobby</a>
-                            <a href="#" class="list-group-item list-group-item-action">Services</a>
-                            <a href="#" class="list-group-item list-group-item-action">Kids Items</a>
-                            <a href="#" class="list-group-item list-group-item-action">Fashion</a>
-                            <a href="#" class="list-group-item list-group-item-action">Sports</a>
-                            <a href="#" class="list-group-item list-group-item-action">Education</a>
-                            <a href="#" class="list-group-item list-group-item-action">Industrial</a>
-                            <a href="#" class="list-group-item list-group-item-action">Home & Garden</a>
-                            <a href="#" class="list-group-item list-group-item-action">Food & Agriculture</a>
-                            <a href="#" class="list-group-item list-group-item-action">Other</a>
-                            <a class="list-group-item list-group-item-action disabled">Other</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=all')?>" class="list-group-item list-group-item-action active" aria-current="true">All</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=colombo')?>" class="list-group-item list-group-item-action">Colombo</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=ampara')?>" class="list-group-item list-group-item-action">Ampara</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=anuradhapura')?>" class="list-group-item list-group-item-action">Anuradhapura</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=badulla')?>" class="list-group-item list-group-item-action">Badulla</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=batticola')?>" class="list-group-item list-group-item-action">Batticola</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=gampaha')?>" class="list-group-item list-group-item-action">Gampaha</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=hambanthota')?>" class="list-group-item list-group-item-action">Hambanthota</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=jaffna')?>" class="list-group-item list-group-item-action">Jaffna</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=kalutara')?>" class="list-group-item list-group-item-action">Kalutara</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=kegalle')?>" class="list-group-item list-group-item-action">Kegalle</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=kilinochchi')?>" class="list-group-item list-group-item-action">Kilinochchi</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=kurunegala')?>" class="list-group-item list-group-item-action">Kurunegala</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=mannar')?>" class="list-group-item list-group-item-action">Mannar</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=matara')?>" class="list-group-item list-group-item-action">Matara</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=monaragala')?>" class="list-group-item list-group-item-action">Monaragala</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=mullathivu')?>" class="list-group-item list-group-item-action">Mullathivu</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=nuwaraeliya')?>" class="list-group-item list-group-item-action">Nuwara Eliya</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=polonnnaruwa')?>" class="list-group-item list-group-item-action">Polonnnaruwa</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=puttalam')?>" class="list-group-item list-group-item-action">Puttalam</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=rathnapura')?>" class="list-group-item list-group-item-action">Rathnapura</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=trincomalee')?>" class="list-group-item list-group-item-action">Trincomalee</a>
+                            <a href="<?php echo base_url('/index.php/home/allads/?dist=vavuniya')?>" class="list-group-item list-group-item-action">Vavuniya</a>
                             <div class="heading-line mb-5 mt-5"></div>
                         </div>        
                     </div>
