@@ -71,30 +71,30 @@
                     <h3 class="dis mb-5">Districts</h3>
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-md-4 districts">
-                          <a href="#" id="col">Colombo</a><br>
-                          <a href="#" id="am">Ampara</a><br>
-                          <a href="#" id="an">Anuradhapura</a><br>
-                          <a href="#" id="ba">Badulla</a><br>
-                          <a href="#" id="bat">Batticaloa</a><br>
-                          <a href="#" id="ga">Gampaha</a><br>
-                          <a href="#" id="ha">Hambantota</a><br>
-                          <a href="#" id="ja">Jaffna</a><br>
-                          <a href="#" id="ka">Kalutara</a><br>
-                          <a href="#" id="ke">Kegalle</a><br>
-                          <a href="#" id="ki">Kilinochchi</a><br>
-                          <a href="#" id="ku">Kurunegala</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=colombo')?>" id="col">Colombo</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=ampara')?>" id="am">Ampara</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=anuradhapura')?>" id="an">Anuradhapura</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=badulla')?>" id="ba">Badulla</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=batticaloa')?>" id="bat">Batticaloa</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=gampaha')?>" id="ga">Gampaha</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=hambantota')?>" id="ha">Hambantota</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=jaffna')?>" id="ja">Jaffna</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=kalutara')?>" id="ka">Kalutara</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=kegalle')?>" id="ke">Kegalle</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=kilinochchi')?>" id="ki">Kilinochchi</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=kurunegala')?>" id="ku">Kurunegala</a><br>
                        </div>
                        <div class="col-lg-6 col-md-4 districts">
-                          <a href="#" id="ma">Mannar</a><br>
-                          <a href="#" id="mat">Matara</a><br>
-                          <a href="#" id="mo">Moneragala</a><br>
-                          <a href="#" id="mu">Mullativu</a><br>
-                          <a href="#" id="nu">Nuwara Eliya</a><br>
-                          <a href="#" id="po">Polonnaruwa</a><br>
-                          <a href="#" id="pu">Puttalam</a><br>
-                          <a href="#" id="ra">Rathnapura</a><br>
-                          <a href="#" id="tr">Trincomalee</a><br>
-                          <a href="#" id="vu">Vavuniya</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=mannar')?>" id="ma">Mannar</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=matara')?>" id="mat">Matara</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=moneragala')?>" id="mo">Moneragala</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=mullativu')?>" id="mu">Mullativu</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=nuwara eliya')?>" id="nu">Nuwara Eliya</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=polonnaruwa')?>" id="po">Polonnaruwa</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=puttalam')?>" id="pu">Puttalam</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=rathnapura')?>" id="ra">Rathnapura</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=trincomalee')?>" id="tr">Trincomalee</a><br>
+                          <a href="<?php echo base_url('/index.php/home/allads/?dist=vavuniya')?>" id="vu">Vavuniya</a><br>
                        </div>
                     </div>
                  </div>    
@@ -134,7 +134,7 @@
           <div class="row align-items-center">
             <div class="col-md-3">
               <div class="card shadow text-center" >
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=All')?>">
                     <img src="assets/images/categories/vehicles.png" class="card-img-top"  alt="catvehicle">
                   <div class="card-body ">
                     <h3 class="text-center">Vehicles</h3>
@@ -145,7 +145,7 @@
             </div>
             <div class="col-md-3">
               <div class="card shadow text-center" >
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=electronics')?>">
                     <img src="assets/images/categories/electronic.png" class="card-img-top"  alt="electronics" >
                   <div class="card-body ">
                     <h3 class="text-center">Electronics</h3>
@@ -156,7 +156,7 @@
             </div>
             <div class="col-md-3">
               <div class="card shadow text-center" >
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=property/property/land')?>">
                     <img src="assets/images/categories/properties.png" class="card-img-top"  alt="properties">
                   <div class="card-body ">
                     <h3 class="text-center">Properties</h3>
@@ -167,7 +167,7 @@
             </div>
             <div class="col-md-3">
               <div class="card shadow text-center" >
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=leisure/hobby')?>">
                     <img src="assets/images/categories/leisure.png" class="card-img-top"  alt="leisure">
                   <div class="card-body ">
                     <h3 class="text-center">Leisure</h3>
@@ -181,7 +181,7 @@
           <div class="row align-items-center">
             <div class="col-md-3">
               <div class="card shadow text-center " >
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=services')?>">
                     <img src="assets/images/categories/services.png" class="card-img-top"  alt="services">
                   <div class="card-body ">
                     <h3 class="text-center">Services</h3>
@@ -192,7 +192,7 @@
             </div>
             <div class="col-md-3">
               <div class="card shadow text-center" >
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=kids Items')?>">
                     <img src="assets/images/categories/kids.png" class="card-img-top"  alt="kids">
                   <div class="card-body ">
                     <h3 class="text-center">Kids Items</h3>
@@ -203,7 +203,7 @@
             </div>
             <div class="col-md-3">
               <div class="card shadow text-center" >
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=fashion')?>">
                     <img src="assets/images/categories/fashion.png" class="card-img-top"  alt="fashion">
                   <div class="card-body ">
                     <h3 class="text-center">Fashion</h3>
@@ -214,7 +214,7 @@
             </div>
             <div class="col-md-3">
               <div class="card shadow text-center" >
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=sports')?>">
                     <img src="assets/images/categories/sports.png" class="card-img-top"  alt="sports">
                   <div class="card-body ">
                     <h3 class="text-center">Sports</h3>
@@ -228,7 +228,7 @@
           <div class="row align-items-center">
             <div class="col-md-3">
               <div class="card shadow text-center" >
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=education')?>">
                     <img src="assets/images/categories/learning.png" class="card-img-top"  alt="Learning">
                   <div class="card-body ">
                     <h3 class="text-center">Education</h3>
@@ -239,7 +239,7 @@
             </div>
             <div class="col-md-3">
               <div class="card shadow text-center" >
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=industrial')?>">
                     <img src="assets/images/categories/industry.png" class="card-img-top"  alt="Industry" >
                   <div class="card-body ">
                     <h3 class="text-center">Industrial</h3>
@@ -250,7 +250,7 @@
             </div>
             <div class="col-md-3">
               <div class="card shadow text-center" >
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=home & garden')?>">
                     <img src="assets/images/categories/household.png" class="card-img-top"  alt="Household">
                   <div class="card-body ">
                     <h3 class="text-center">Home & Garden</h3>
@@ -261,7 +261,7 @@
             </div>
             <div class="col-md-3">
               <div class="card shadow text-center" >
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=food & agriculture')?>">
                     <img src="assets/images/categories/food.png" class="card-img-top"  alt="food">
                   <div class="card-body ">
                     <h3 class="text-center">Food & Agriculture</h3>
@@ -275,7 +275,7 @@
           <div class="row align-items-center">
             <div class="col-md-3">
               <div class="card shadow text-center">
-                <a href="#">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=other')?>">
                     <img src="assets/images/categories/other.png" class="card-img-top"  alt="other">
                   <div class="card-body ">
                     <h3 class="text-center">Other</h3>
