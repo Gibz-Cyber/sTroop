@@ -79,7 +79,7 @@
                                 if($_GET['adCategory'] == "electronics"){
                                   //electronics category start from here
                                   ?>
-                                  <option value="0">--Select--</option>
+                                  <option value="">--Select--</option>
                                   <option value="1-step1" >Development boards & accessories</option>
                                   <option value="2-step1" >Air condition & accessories</option>
                                   <option value="3-step1" >video games, consoles & accessories</option>
@@ -98,7 +98,7 @@
                                 }else if($_GET['adCategory'] == "vehicles"){
                                   //vehicles category start from here
                                   ?>
-                                  <option value="0">--Select--</option>
+                                  <option value="">--Select--</option>
                                   <option value="1-step1">Auto parts and accessories</option>
                                   <option value="2-step1">Motor bikes</option>
                                   <option value="3-step1">Vans buses and Lorries</option>
@@ -227,7 +227,7 @@
                               ?>
                               <!--cases end from here-->
                         </select> 
-                      </div>
+                      </div><small id="case-error" style="color: yellow;"></small>
                     </div>
                 </div>
               <!--left corner category selector end from here-->
@@ -600,6 +600,7 @@
                                         <option value="Vavuniya">Vavuniya</option>
                                 </select>
                             </div>
+                            <small id="dist-error" style="color: red;"></small>
                             <div>
                                 <a href="#" class="btn btn-outline-primary mt-3" id="nxt">Next</a>
                             </div>
@@ -620,7 +621,7 @@
                                     <div class="progress" style="height: 1px;" id="main_img_prog_container">
                                       <div id="main_img_progress" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                </div><br>
+                                </div><small id="main-img-error" style="color: red;"></small><br>
 
                                 <div class="form-group">
                                     <label>Image 1 (Optional)</label>
@@ -698,24 +699,24 @@
                                 <div class="form-group">
                                 <label>Title (Required)</label>
                                 <textarea name="title" rows="2" class="form-control" placeholder="title (maximum 25 characters)" required maxlength="25"></textarea>
-                                    </div>
+                                    </div><small id="title-error" style="color: red;"></small>
                                     <div class="form-group">
                                         <label>Description (Required)</label>
                                         <textarea name="description" rows="5" class="form-control" placeholder="Description (maximum 800 characters)" maxlength="800" required></textarea>
-                                    </div>
+                                    </div><small id="desc-error" style="color: red;"></small>
                                     <div class="row">
                                         <div class="col-sm-6 col-md-6">
                                     <div class="form-group">
                                         <label>Price (Rs) (Required)</label>
                                         <input type="text" onkeypress="return CheckNumeric()" onkeyup="FormatCurrency(this)" name="price" placeholder="price" class="form-control" maxlength="20" required>
-                                    </div>
+                                    </div><small id="price-error" style="color: red;"></small>
                                 </div>
                                 <div class="col-sm-6 col-sm-6">
                                     <div class="form-group">
                                         <label>Price Status (Optional)</label><br>
                                         <input type="radio" name="nego" value="Negotiable">Negotiable<br>
                                         <input type="radio" name="nego" value="Fixed Price">Fixed Price
-                                    </div>
+                                    </div><small id="nego-error" style="color: red;"></small>
                                     </div>
                                 </div>
                                 <!--hidden data start from here-->
@@ -832,8 +833,54 @@
               type:"POST",
               dataType:"json",
               beforeSend:function(){
-                alert("Helo world");
-              },success:function(){
+
+                $("#case-error").html(null);$("#dist-error").html(null);$("#main-img-error").html(null);$("#title-error").html(null);$("#desc-error").html(null);$("#price-error").html(null);$("nego-error").html(null);
+                
+              },success:function(respData){
+
+                if(!respData.success){
+                  //form validation error start from here
+
+                  if(respData.cases != ""){
+                    $("#case-error").html(respData.cases);
+                  }
+
+                  if(respData.district != ""){
+
+                    $("#step-3").hide();$("#step-2").hide();$(".step-1").show();$("#pro").css("width","33%");$("#pro1").html("Step 1");$("#dist-error").html(respData.district);
+
+                  }else if(respData.image_1 != ""){
+
+                     $("#step-3").hide();$(".step-1").hide();$("#step-2").show();$("#pro").css("width","66%");$("#pro1").html("Step 2");$("#main-img-error").html(respData.image_1);
+
+                  }else if(respData.title != "" || respData.desc != "" || respData.price != "" || respData.nego != ""){
+
+                    $("#step-1").hide();$("#step-2").hide();$("#step-3").show();$("#pro").css("width","100%");$("#pro1").html("Last Step");
+
+                    if(respData.title != ""){
+                      $("#title-error").html(respData.title);
+                    }
+
+                    if(respData.desc != ""){
+                      $("#desc-error").html(respData.desc);
+                    }
+
+                    if(respData.price != ""){
+                      $("#price-error").html(respData.price);
+                    }
+
+                    if(respData.nego != ""){
+                      $("#nego-error").html(respData.nego);
+                    }
+
+                  }
+
+                  //form validation error end form here
+                }else{
+                  //form validation success start from here
+                  window.location.href = "<?php echo base_url('/index.php/user/pendingAds'); ?>";
+                  //form validation success end from here
+                }
 
               }
 
@@ -945,7 +992,7 @@
 
                         $("#image_1").val(resdData.file);
                         $("#main_img_progress").css("width","100%");
-                        $("#del_main").show();
+                        $("#del_main").show();$("#main-img-error").html(null);
 
                       }else if(data == 2){
 

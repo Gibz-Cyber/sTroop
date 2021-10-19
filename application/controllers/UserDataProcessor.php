@@ -376,7 +376,7 @@ class UserDataProcessor extends CI_Controller{
 				//request method post start from here
 				$this->load->library("form_validation");
 
-				$this->form_validation->set_rules("cases","cases","required");
+				$this->form_validation->set_rules("cases","sub category","required");
 				$this->form_validation->set_rules("district","district","required");
 				$this->form_validation->set_rules("title","title","required|max_length[25]");
 				$this->form_validation->set_rules("description","description","required|max_length[800]");
@@ -982,6 +982,66 @@ class UserDataProcessor extends CI_Controller{
 			//sessions not available start from here
 			echo "404";
 			//sessions not available end form here
+		}
+
+	}
+
+	public function deleteAd(){
+
+		if($this->checkSessions()){
+			//sessions available start from here
+			if($_SERVER['REQUEST_METHOD'] == "POST"){
+				//post
+				$this->load->library("form_validation");
+				$this->form_validation->set_rules("adId","request","required|numeric");
+
+				if(!$this->form_validation->run()){
+					//form validation error start from here
+					$array = array(
+						"success"=>false,
+						"request"=>form_error("adId")
+					);
+					//form validation error end from here
+				}else{
+					//form validation success start from here
+					$this->load->library("Filter");
+					$this->load->library("AdStatus");
+					$adId = $this->filter->xssFilter($this->input->post("adId"));
+
+					$this->load->model("UserDataProcessorModel");
+					$update = $this->UserDataProcessorModel->changeAdStatus($adId,$this->session->userdata("user_id"),$this->adstatus->getDelete());
+
+					if($update === false){
+						//delete error start from here
+						$array = array(
+							"success"=>true,
+							"del"=>false
+						);
+						//delete error end from here
+					}else{
+						//delete success start from here
+						$array = array(
+							"success"=>true,
+							"del"=>true
+						);
+						//delete success end from here
+					}
+
+					//form validation success end from here
+				}
+
+				echo json_encode($array);
+				//post
+			}else{
+				// !post
+				echo "404";
+				//!post
+			}
+			//sessions availbale end from here
+		}else{
+			//sessions not available start from here
+			echo "404";
+			//sessions not available end from here
 		}
 
 	}

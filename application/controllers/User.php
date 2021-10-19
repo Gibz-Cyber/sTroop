@@ -134,6 +134,24 @@ class User extends CI_Controller{
 	}
 
 
+	public function activeAds(){
+
+		if($this->checkSessions()){
+			//sessions available start form here
+			$this->load->library("AdStatus");
+			$this->load->model("UserModel");
+			$data['adData'] = $this->UserModel->getAds($this->session->userdata("user_id"),$this->adstatus->getActive());
+			$this->load->view("account/active_ads",$data);
+			//sessions available end from here
+		}else{
+			//sessions not available start from here
+			echo "404";
+			//sessions not available end form here
+		}
+
+	}
+
+
 }
 
 ?>

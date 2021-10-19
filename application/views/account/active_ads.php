@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?php echo base_url("/assets/css/style.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("/assets/css/fontawesome.css"); ?>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;600;900&display=swap" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       
     </script>
@@ -47,12 +47,12 @@
       <section id="alladds" class="all-ads" style="margin-bottom: 100px;">
             <div class="container"> 
               
-              <h4 align="center">Pending Ads</h4>
+              <h4 align="center">Active Ads</h4>
               <?php
 
               if($adData === false){ 
 
-              echo "<div class='alert alert-primary'><p align='center'>No pending ads available at this moment.</p></div>";
+              echo "<div class='alert alert-primary'><p align='center'>No active ads available at this moment.</p></div>";
 
               }else{
 
@@ -64,7 +64,6 @@
                       echo "<div class='col-sm-12 col-md-3 col-sm-6'>";
                         //column start from here
                         echo "<div class='card'><!--card-->
-                              <a href='ad_description/description.view.php' style='pointer-events: none'><!--href-->
                                 <div class='d-flex justify-content-between align-items-center'><!--center-->
                                     <div class='align-items-center time'><!--time start from here-->
                                       <i class='bi bi-clock'></i> {$individualAd->posted_date}
@@ -76,10 +75,9 @@
                                 <div class='card-body'><!--card body start from here-->
                                   <div class='text-center'>
                                       <p>{$individualAd->title}</p>
+                                      <button class='btn btn-sm btn-danger' onclick='del({$individualAd->ad_id})'>Delete</button>
                                   </div>
                                 </div><!--card body end form here-->
-                                              
-                              </a><!--hrerf-->
                             </div>";
                         //column end from here
                       echo "</div>";
@@ -105,6 +103,38 @@
 
             </div>
         </section>
+        <script type="text/javascript">
+          
+          function del(adId){
+
+            $.ajax({
+              url:"<?php echo base_url('/index.php/UserDataProcessor/deleteAd'); ?>",
+              data:{adId:adId},
+              dataType:"json",
+              type:"POST",
+              beforeSend:function(){
+
+              },success:function(respData){
+
+                if(!respData.success){
+                  alert("Please refresh the page and try again");
+                }else{
+
+                  if(!respData.del){
+                    alert("Oops! something went wrong");
+                  }else{
+                    alert("Advertisement deleted successfully!");
+                  window.location.href=document.URL;
+                  }
+
+                }
+
+              }
+            });
+
+          }
+
+        </script>
 
     
         

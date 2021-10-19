@@ -203,6 +203,22 @@ class UserDataProcessorModel extends CI_Model{
 
 	}
 
+	public function changeAdStatus($adId,$userId,$adStatus){
+
+		$this->load->database();
+		$sql = "UPDATE ad SET ad_status = ? WHERE ad_id = ? AND user_id = ?;";
+		$this->db->query($sql,array($adStatus,$adId,$userId));
+		$affect = $this->db->affected_rows();
+		$this->db->close();
+
+		if($affect != 1){
+			return false;
+		}else{
+			return true;
+		}
+
+	}
+
 }
 
 ?>
