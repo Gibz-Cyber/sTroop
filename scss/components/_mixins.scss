@@ -1,0 +1,16 @@
+@use '../custom' as*;
+
+//gradient mixin
+@mixin gradient {
+  background: linear-gradient(
+    to right,
+    rgba($primary, 0.96),
+    rgba($secondary, 0.95)
+  );
+}
+
+//transition
+@mixin transitionProperty {
+  transition-duration: 600ms;
+  transition-property: all;
+}

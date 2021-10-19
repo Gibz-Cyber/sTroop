@@ -1,0 +1,109 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+//NAVBAR CSS
+.menu {
+  @include gradient;
+
+  li {
+    padding: 0 0.7rem;
+
+    a {
+      color: $white !important;
+      text-transform: capitalize;
+      font-weight: 600;
+
+      &:hover {
+        transform: scale(1.5);
+        @include transitionProperty;
+      }
+    }
+  }
+
+  .navbar-brand {
+    &:hover {
+      transform: scale(1.2);
+      @include transitionProperty;
+    }
+  }
+}
+
+//INTRO SECTION
+.intro-section {
+  @include gradient;
+  padding: 10rem 0 0 0;
+  width: 100%;
+  height: 100%;
+
+  /* districts */
+}
+.districts {
+  h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+
+  a {
+    color: $white !important;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    &:hover {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+//CATEGORIES
+.card {
+  height: $card-height;
+  margin-top: 3rem;
+  &:hover {
+    transform: scale(1.1);
+    @include transitionProperty;
+  }
+
+  a {
+    text-decoration: none;
+    img {
+      height: 8rem;
+      width: 8rem;
+      padding-top: 1rem;
+
+      @include media-breakpoint-up(xl) {
+        height: 11rem;
+        width: 14rem;
+      }
+    }
+  }
+}
+
+/* style signup form */
+.modal {
+  .modal-header {
+    @include gradient;
+
+    text-align: center;
+  }
+}
+
+/* style search field */
+.searchFilter {
+  .input-group {
+    #table_filter {
+      border-radius: 50px;
+      text-align: center;
+      font-size: 1.5rem;
+
+      @include media-breakpoint-down(md) {
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      margin-left: 1rem;
+    }
+  }
+}

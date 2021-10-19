@@ -1,0 +1,138 @@
+@use '../custom' as*;
+@use '../components/mixins' as *;
+
+.footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  background-color: $footer;
+}
+
+//style contact box content
+.contact-box {
+  position: relative;
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: $primary;
+
+    @include media-breakpoint-up(sm) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__info {
+    padding: 0.5rem;
+    font-weight: 200;
+
+    &--title {
+      font-size: 0.8rem;
+      color: $white;
+      text-decoration: none;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1.2rem;
+      }
+    }
+
+    &--subtitle {
+      font-size: 0.6rem;
+      color: $gray-600;
+      text-decoration: none;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+/* style social media links */
+.footer-sm {
+  p {
+    font-weight: 200;
+  }
+
+  a {
+    color: $white;
+
+    i {
+      font-size: 1rem;
+      margin-left: 1rem;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+/* style footer info */
+.info {
+  h5 {
+    font-weight: 400;
+  }
+  .company-name {
+    h5 {
+      margin-bottom: 1rem;
+    }
+
+    .company-logo {
+      padding-left: 2.5rem;
+    }
+  }
+
+  .info-list {
+    display: block;
+    list-style-type: none;
+    position: relative;
+    font-weight: 300;
+
+    li {
+      text-decoration: none;
+
+      a {
+        color: $white;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+/* style copyright */
+.footer-bottom {
+  background-color: $black;
+
+  &__copyright {
+    color: $gray-600;
+    font-weight: 300;
+
+    a {
+      color: $gray-300;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+/* back to top button */
+.back-to-top {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  right: 1.875rem;
+  bottom: 1.875rem;
+  z-index: 9999;
+
+  i {
+    color: $white;
+    font-size: 1rem;
+  }
+}

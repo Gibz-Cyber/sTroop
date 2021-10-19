@@ -1,0 +1,34 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.all-ads {
+  padding: 10rem 0 0 0;
+}
+
+.category-title {
+  color: $primary;
+  padding-bottom: 1rem;
+}
+
+.categories {
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+}
+
+.wrap-shop-control {
+  .wrap-right {
+    .sort-item {
+      &--orderby {
+        padding: 1rem 1rem;
+      }
+
+      &--product-per-page {
+        padding: 1rem 1rem;
+      }
+    }
+    .use-chosen {
+      height: 3rem;
+    }
+  }
+}
