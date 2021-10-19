@@ -28,8 +28,8 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <form class="d-flex">
-                        <input class="form-control me-2" id="table-filter" type="search" placeholder="Search" aria-label="Search">
+                    <form class="d-flex" action="">
+                        <input class="form-control me-2" name='query' id="table-filter" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-rounded" type="submit">Search</button>
                     </form>
                 </li>
@@ -116,53 +116,50 @@
 
                     <div class="col-12 col-lg-9 col-md-9 col-sm-8 col-xs-12 text-center">
                         <div class="wrap-shop-control">
-                            <div class="wrap-right d-flex justify-content-center">
-                                <div class="sort-item--orderby">
-                                    <select name="orderby" class="use-chosen" >
-                                        <option value="default" selected="selected">Default sorting</option>
-                                        <option value="date">Sort by newness</option>
-                                        <option value="price">Sort by price: low to high</option>
-                                        <option value="price-desc">Sort by price: high to low</option>
-                                    </select>
-                                </div>
-                                <div class="sort-item--product-per-page">
-                                    <select name="post-per-page" class="use-chosen" >
-                                        <option value="12" selected="selected">12 per page</option>
-                                        <option value="16">16 per page</option>
-                                        <option value="18">18 per page</option>
-                                        <option value="21">21 per page</option>
-                                        <option value="24">24 per page</option>
-                                        <option value="30">30 per page</option>
-                                        <option value="32">32 per page</option>
-                                    </select>
-                                </div>
-                            </div>
-
+            
                           <!-- start ad grid -->
                           <div class="row">
                               <div class="col-9 col-lg-4 col-md-4 product-list product-grid">
                                 
-                                <div class="card"><!--card-->
+                                <?php
+
+                                  if($adData === false){
+
+                                    echo "<div class='alert alert-warning'><p align-center>No ads available yet.</p></div>";
+
+                                  }else{
+
+                                    foreach($adData as $individualAd){
+                                      ?>
+
+                                      <div class="card"><!--card-->
                                   <a href="ad_description/description.view.php"><!--href-->
                                     <div class="d-flex justify-content-between align-items-center"><!--center-->
                                         <div class="align-items-center time"><!--time start from here-->
-                                          <i class="bi bi-clock"></i> 3 Days
+                                          <i class="bi bi-clock"></i><?php echo $individualAd->posted_date; ?>
                                         </div><!--time end from here-->
                                     </div><!--center-->
                                       <div class="text-center"><!--text center start frin here-->
-                                        <img src="https://i.imgur.com/TbtwkyW.jpg" width="200">
+                                        <img src="<?php echo $individualAd->image_1; ?>" width="200">
                                       </div><!--text center end form here-->
                                     <div class="card-body"><!--card body start from here-->
                                       <div class="text-center">
-                                          <p>Amazon Echo</p> <span class="text-success">Rs:5000/=</span>
-                                      </div>
-                                      <div class="text-center">
-                                          <p>Posted time:<span>14.30pm</span></p> 
+                                          <p><?php echo $individualAd->title; ?></p> <span class="text-success">Rs : <?php echo $individualAd->price; ?></span>
                                       </div>
                                     </div><!--card body end form here-->
                                     
                                   </a><!--hrerf-->
                                 </div><!--card-->
+
+
+                                      <?php
+
+                                    }
+
+                                  }
+
+                                ?>
+                                
                               </div> 
                             </div>
 
