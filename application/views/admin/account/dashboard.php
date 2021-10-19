@@ -19,7 +19,7 @@
      <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-left">
         <div class="container">
             <a class="navbar-brand" href="">
-                <img src="<?php echo base_url('/assets/images/logo/logo.png'); ?>" alt="logo image" width="60" height="60">&nbsp;&nbsp;&nbsp;SupplyTroopLK
+                <img src="<?php echo base_url('/assets/images/logo/logo.png'); ?>" alt="logo image" width="60" height="60">&nbsp;&nbsp;&nbsp;SupplyTroopLK  :  ADMIN
                 
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,8 +47,13 @@
         </div>
       </nav>
 
-     <div class="container" style="margin-top: 100px;">
+     <div class="container" style="margin-top: 60px;">
       <!--container start from here-->
+
+      <div class="admin-image text-center">
+        <img src="<?php echo base_url('/assets/images/admin/admin-page.png'); ?>" style="width:400px;">
+      </div>
+
       <?php
 
       /*  if($this->session->flashdata("welcome_msg"){

@@ -11320,6 +11320,31 @@ a {
   text-decoration: none;
 }
 
+.table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  /* thead {
+  	tr {
+  		@include gradient;
+  		color: #ffffff;
+  		text-align: left;
+  	}
+  }
+
+  tbody {
+  	tr {
+  		border-bottom: 1px solid #dddddd;
+  	}
+  	tr:nth-of-type(even) {
+  		background-color: #f3f3f3;
+  	}
+  } */
+}
+
 .footer {
   margin-top: 2rem;
   padding-top: 1rem;
@@ -11790,91 +11815,37 @@ a {
   margin-top: 10rem;
 }
 
+.ad-property {
+  margin-top: 10rem;
+}
+.ad-property .form {
+  color: black;
+}
+.ad-property .form label {
+  color: black;
+}
+.ad-property .form input {
+  color: black;
+}
+
 .account-section {
   margin-top: 10rem;
 }
 
-/* snackbar start from here*/
-#snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  font-size: 17px;
+.table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }
 
-#snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+thead {
+  border-radius: 10px;
+  background: linear-gradient(to right, rgba(206, 60, 44, 0.96), rgba(142, 68, 173, 0.95));
+  color: #ffffff;
+  text-align: left;
 }
-
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
-/*snackbar end from here*/
-
-/*side navigation start from here*/
-
-.sidenav {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-/*side navigationn end from here*/
 
 /*# sourceMappingURL=style.css.map */
