@@ -18,7 +18,7 @@
     <!-- START THE NAVBAR -->
      <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-left">
         <div class="container">
-            <a class="navbar-brand" href="">
+            <a class="navbar-brand"  href="<?php echo base_url('/index.php/admin/dashboard'); ?>">
                 <img src="<?php echo base_url('/assets/images/logo/logo.png'); ?>" alt="logo image" width="60" height="60">&nbsp;&nbsp;&nbsp;SupplyTroopLK : ADMIN
                 
             </a>
@@ -55,7 +55,7 @@
             <div class="title mx-auto col-md-8 border border-primary rounded shadow-lg p-3 mb-5 bg-white">
 
       <hr>
-          <h4 align="center">Change account password.</h4><br>
+          <h4 class="display-4--title" align="center">Change account password.</h4><br>
           <form method="post" id="change_password">
                 <div class="form-group">
               <label>Current Password</label>
@@ -82,7 +82,7 @@
 
           <!--add an admin start form here-->
 
-          <h4 align="center">Add an admin.</h4><br>
+          <h4 class="display-4--title" align="center">Add an admin.</h4><br>
           <form method="post" id="add_admin_form">
                 <div class="form-group">
               <label>First Name</label>

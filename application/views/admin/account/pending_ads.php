@@ -18,7 +18,7 @@
     <!-- START THE NAVBAR -->
      <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-left">
         <div class="container">
-            <a class="navbar-brand" href="">
+            <a class="navbar-brand"  href="<?php echo base_url('/index.php/admin/dashboard'); ?>">
                 <img src="<?php echo base_url('/assets/images/logo/logo.png'); ?>" alt="logo image" width="60" height="60">&nbsp;&nbsp;&nbsp;SupplyTroopLK : ADMIN
                 
             </a>
@@ -49,7 +49,7 @@
 
      <div class="container" style="margin-top: 100px;">
       <!--container start from here-->
-      <h4 align="center">Pending Ads</h4>
+      <h4 class="display-4--title" align="center">Pending Ads</h4>
       <?php
 
       if($result === false){

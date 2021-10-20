@@ -18,7 +18,7 @@
     <!-- START THE NAVBAR -->
      <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-left">
         <div class="container">
-            <a class="navbar-brand" href="">
+            <a class="navbar-brand"  href="<?php echo base_url('/index.php/admin/dashboard'); ?>">
                 <img src="<?php echo base_url('/assets/images/logo/logo.png'); ?>" alt="logo image" width="60" height="60">&nbsp;&nbsp;&nbsp;SupplyTroopLK : ADMIN
                 
             </a>
@@ -34,7 +34,7 @@
                 <a class="nav-link" href="<?php echo base_url('/index.php/admin/activeAds'); ?>">Active Ads</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="aboutus.html">Update Requests</a>
+                <a class="nav-link" href="<?php echo base_url('/index.php/admin/pendingAds'); ?>">Pending Ads</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/index.php/admin/account'); ?>">Account</a>
@@ -49,7 +49,7 @@
 
      <div class="container" style="margin-top: 100px;">
       <!--container start from here-->
-      <h4 align="center">Active Ads</h4>
+      <h4 class="display-4--title" align="center">Active Ads</h4>
       <?php
 
       if($result === false){

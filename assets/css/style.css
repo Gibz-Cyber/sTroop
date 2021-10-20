@@ -11320,31 +11320,6 @@ a {
   text-decoration: none;
 }
 
-.table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  font-family: sans-serif;
-  min-width: 400px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  /* thead {
-  	tr {
-  		@include gradient;
-  		color: #ffffff;
-  		text-align: left;
-  	}
-  }
-
-  tbody {
-  	tr {
-  		border-bottom: 1px solid #dddddd;
-  	}
-  	tr:nth-of-type(even) {
-  		background-color: #f3f3f3;
-  	}
-  } */
-}
-
 .footer {
   margin-top: 2rem;
   padding-top: 1rem;
