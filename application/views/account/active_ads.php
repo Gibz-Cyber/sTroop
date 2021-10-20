@@ -41,7 +41,7 @@
                 <a class="nav-link" href="#">Active Ads</a>
               </li> -->
               <li class="nav-item">
-                <a class="nav-link" href="aboutus.html">Sign out</a>
+                <a class="nav-link" href="<?php echo base_url('/index.php/user/signOut'); ?>">Sign out</a>
               </li>
             </ul>
           </div>
