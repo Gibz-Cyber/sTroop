@@ -1065,7 +1065,7 @@
             $("#image_5").val(null);
             $("#del_sub_4").hide();
             $("#sub_4_img_prog_container").hide();
-
+            //tet
           }
 
         }
