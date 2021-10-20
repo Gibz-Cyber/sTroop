@@ -18,7 +18,7 @@
     <!-- START THE NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="<?php echo base_url(''); ?>">
                 <img src="<?php echo base_url('/assets/images/logo/logo.png'); ?>" alt="logo image" width="60" height="60">&nbsp;&nbsp;&nbsp;SupplyTroopLK
                 
             </a>
@@ -37,7 +37,7 @@
                 <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-signup">Sign Up</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="aboutus.html">About us</a>
+                <a class="nav-link" href="http://localhost/supplytroop/index.php/home/aboutus">About us</a>
               </li>
              <!--  <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
@@ -324,7 +324,7 @@
               <div class="col-lg-7 col-md-6 mb-4">
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/Gibz-Cyber/sTroop"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
               </div>
@@ -347,19 +347,19 @@
               <h5 class="text-capitalize">Help & Support</h5>
               <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
               <ul class="list-inline info-list">
-                <li><a href="contactus.php">Contact Us</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="helpnsupport.html">How to Sell Fast</a></li>
-                <li><a href="staysafe.html">safety policy</a></li>
+                <li><a  href="http://localhost/supplytroop/index.php/home/contactus">Contact Us</a></li>
+                <li><a href="http://localhost/supplytroop/index.php/home/faq">FAQ</a></li>
+                <li><a href="http://localhost/supplytroop/index.php/home/sellfast">How to Sell Fast</a></li>
+                <li><a href="http://localhost/supplytroop/index.php/home/safetypolicy">safety policy</a></li>
               </ul>
             </div>
             <div class="col-12 col-md-6 col-lg-3 mb-4 mx-auto">
               <h5 class="text-capitalize">About Us</h5>
               <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
               <ul class="list-inline info-list">
-                <li><a href="aboutus.html">Who we are</a></li>
-                <li><a href="terms.html">Terms & Conditions</a></li>
-                <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                <li><a href="http://localhost/supplytroop/index.php/home/aboutus">Who we are</a></li>
+                <li><a href="http://localhost/supplytroop/index.php/home/terms">Terms & Conditions</a></li>
+                <li><a href="http://localhost/supplytroop/index.php/home/privacypolicy">Privacy Policy</a></li>
               </ul>
             </div>
           </div>
@@ -396,6 +396,6 @@
 
 
 
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
+      <script src="<?php echo base_url('/assets/js/bootstrap.bundle.min.js'); ?>" ></script>
 </body>
 </html>

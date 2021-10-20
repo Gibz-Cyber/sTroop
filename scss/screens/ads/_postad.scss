@@ -2,148 +2,148 @@
 @use "../../components/mixins" as *;
 
 .list-group-item-heading {
-  background: linear-gradient(
-    to right,
-    rgba($primary, 0.96),
-    rgba($secondary, 0.95)
-  );
+	background: linear-gradient(
+		to right,
+		rgba($primary, 0.96),
+		rgba($secondary, 0.95)
+	);
 
-  height: 5rem;
-  border-radius: 5px;
-  text-align: center;
+	height: 5rem;
+	border-radius: 5px;
+	text-align: center;
 }
 
 .menu {
-  @include gradient;
+	@include gradient;
 
-  li {
-    padding: 0 0.7rem;
+	li {
+		padding: 0 0.7rem;
 
-    a {
-      color: $white !important;
-      text-transform: capitalize;
-      font-weight: 600;
+		a {
+			color: $white !important;
+			text-transform: capitalize;
+			font-weight: 600;
 
-      &:hover {
-        transform: scale(0.9);
-        @include transitionProperty;
-      }
-    }
-  }
+			&:hover {
+				transform: scale(0.9);
+				@include transitionProperty;
+			}
+		}
+	}
 
-  .dropdown-menu {
-    li {
-      a {
-        color: black !important;
-      }
-    }
-  }
+	.dropdown-menu {
+		li {
+			a {
+				color: black !important;
+			}
+		}
+	}
 }
 
 .ad-vehicle {
-  margin-top: 10rem;
+	margin-top: 10rem;
 
-  .form {
-    color: black;
-    label {
-      color: black;
-    }
+	.form {
+		color: black;
+		label {
+			color: black;
+		}
 
-    input {
-      color: black;
-    }
-  }
+		input {
+			color: black;
+		}
+	}
 }
 
 .ad-electronic {
-  margin-top: 10rem;
+	margin-top: 10rem;
 
-  .form {
-    color: black;
-    label {
-      color: black;
-    }
+	.form {
+		color: black;
+		label {
+			color: black;
+		}
 
-    input {
-      color: black;
-    }
-  }
+		input {
+			color: black;
+		}
+	}
 }
 
 .ad-rental {
-  margin-top: 10rem;
+	margin-top: 10rem;
 
-  .form {
-    color: black;
-    label {
-      color: black;
-    }
+	.form {
+		color: black;
+		label {
+			color: black;
+		}
 
-    input {
-      color: black;
-    }
-  }
+		input {
+			color: black;
+		}
+	}
 }
 
 .ad-vacancies {
-  margin-top: 10rem;
+	margin-top: 10rem;
 
-  .form {
-    color: black;
-    label {
-      color: black;
-    }
+	.form {
+		color: black;
+		label {
+			color: black;
+		}
 
-    input {
-      color: black;
-    }
-  }
+		input {
+			color: black;
+		}
+	}
 }
 
 .ad-look-rent {
-  margin-top: 10rem;
+	margin-top: 10rem;
 
-  .form {
-    color: black;
-    label {
-      color: black;
-    }
+	.form {
+		color: black;
+		label {
+			color: black;
+		}
 
-    input {
-      color: black;
-    }
-  }
+		input {
+			color: black;
+		}
+	}
 }
 .ad-look-electronic {
-  margin-top: 10rem;
+	margin-top: 10rem;
 
-  .form {
-    color: black;
-    label {
-      color: black;
-    }
+	.form {
+		color: black;
+		label {
+			color: black;
+		}
 
-    input {
-      color: black;
-    }
-  }
+		input {
+			color: black;
+		}
+	}
 }
 .view-ad {
-  margin-top: 10rem;
+	margin-top: 10rem;
 }
 
 .ad-property {
-  margin-top: 10rem;
+	margin-top: 10rem;
 
-  .form {
-    color: black;
+	.form {
+		color: black;
 
-    label {
-      color: black;
-    }
+		label {
+			color: black;
+		}
 
-    input {
-      color: black;
-    }
-  }
+		input {
+			color: black;
+		}
+	}
 }

@@ -18,7 +18,7 @@
     <!-- START THE NAVBAR -->
      <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-left">
         <div class="container">
-            <a class="navbar-brand" href="">
+            <a class="navbar-brand" href="<?php echo base_url('/index.php/admin/dashboard'); ?>">
                 <img src="<?php echo base_url('/assets/images/logo/logo.png'); ?>" alt="logo image" width="60" height="60">&nbsp;&nbsp;&nbsp;SupplyTroopLK : ADMIN
                 
             </a>
@@ -27,18 +27,18 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="<?php echo base_url('/index.php/admin/dashboard'); ?>">Home</a>
-              </li>
-              <li class="nav-item">
+              </li> -->
+             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="<?php echo base_url('/index.php/admin/clients'); ?>">Clients</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/index.php/admin/activeAds'); ?>">Active Ads</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Pending Ads</a>
-              </li>
+                <a class="nav-link" href="<?php echo base_url('/index.php/admin/pendingAds'); ?>">Pending Ads</a>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/index.php/admin/account'); ?>">Account</a>
               </li>
@@ -52,7 +52,8 @@
 
      <div class="container" style="margin-top: 100px;">
       <!--container start from here-->
-            <h4 align="center">Supplytroop Users</h4>
+            <h4 class="display-4--title" align="center">Supplytroop Users</h4>
+            
        <?php
 
           if($result === false){

@@ -17,6 +17,26 @@ public function aboutus(){
 	$this->load->view("aboutus.html");
 }
 
+public function faq(){
+	$this->load->view("faq.html");
+}
+
+public function sellfast(){
+	$this->load->view("helpnsupport.html");
+}
+
+public function safetypolicy(){
+	$this->load->view("staysafe.html");
+}
+
+public function privacypolicy(){
+	$this->load->view("privacypolicy.html");
+}
+
+public function terms(){
+	$this->load->view("terms.html");
+}
+
 public function allAds(){
 
 	$this->load->model("HomeModel");
