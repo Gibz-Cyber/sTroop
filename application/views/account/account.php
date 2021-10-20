@@ -33,7 +33,7 @@
                 <a class="nav-link" href="#">Contact</a>
               </li> -->
               <li class="nav-item">
-                  <a href="chat.php" class="nav-link">Messages<sup id="count" class="badge badge-danger"></sup>
+                  <a href="<?php echo base_url('/index.php/user/activeAds'); ?>" class="nav-link">My Ads<sup id="count" class="badge badge-danger"></sup>
                 </a>
               </li>
               <li class="nav-item dropdown">
