@@ -1052,26 +1052,23 @@
 
             $("#sub_image_2").val(null);
             $("#image_3").val(null);
-            $("#del_sub_2").val(null);
-            ("#del_sub_2").hide();
+            $("#del_sub_2").hide();
             $("#sub_2_img_prog_container").hide();
 
           }else if(img == 4){
 
             $("#sub_image_3").val(null);
             $("#image_4").val(null);
-            $("#del_sub_3").val(null);
-            ("#del_sub_3").hide();
+            $("#del_sub_3").hide();
             $("#sub_3_img_prog_container").hide();
 
           }else if(img == 5){
 
             $("#sub_image_4").val(null);
             $("#image_5").val(null);
-            $("#del_sub_4").val(null);
-            ("#del_sub_4").hide();
+            $("#del_sub_4").hide();
             $("#sub_4_img_prog_container").hide();
-
+            //tet
           }
 
         }
