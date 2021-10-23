@@ -171,8 +171,13 @@
           <div class="row align-items-center">
             <div class="col-md-3">
               <div class="card shadow text-center" >
+<<<<<<< HEAD
+                <a href="<?php echo base_url('/index.php/home/allads/?main=vehicles')?>">
+                    <img src="assets/images/categories/vehicles.png" class="card-img-top"  alt="catvehicle">
+=======
                 <a href="<?php echo base_url('/index.php/home/allads/?main=All')?>">
                     <img src="<?php echo base_url('/assets/images/categories/vehicles.png'); ?>" class="card-img-top"  alt="catvehicle">
+>>>>>>> be879b8a85c611ae6c1bed61446ad55866c3416a
                   <div class="card-body ">
                     <h3 class="text-center">Vehicles</h3>
                     <p class="card-text">Browse used and brand new cars, motorbikes and any other vehicles in Sri Lanka.</p>
