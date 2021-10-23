@@ -134,7 +134,7 @@
           <div class="row align-items-center">
             <div class="col-md-3">
               <div class="card shadow text-center" >
-                <a href="<?php echo base_url('/index.php/home/allads/?main=All')?>">
+                <a href="<?php echo base_url('/index.php/home/allads/?main=vehicles')?>">
                     <img src="assets/images/categories/vehicles.png" class="card-img-top"  alt="catvehicle">
                   <div class="card-body ">
                     <h3 class="text-center">Vehicles</h3>
