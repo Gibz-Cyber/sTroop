@@ -18,7 +18,7 @@
     <!-- START THE NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?php echo base_url('');?>">
                 <img src="<?php echo base_url('/assets/images/logo/logo.png'); ?>" alt="logo image" width="60" height="60">&nbsp;&nbsp;&nbsp;SupplyTroopLK
                 
             </a>
@@ -28,13 +28,13 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="allads.php">All Ads</a>
+                <a class="nav-link active" aria-current="page" href="<?php echo base_url('/index.php/home/allAds');?>">All Ads</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-signup">Sign Up</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="aboutus.html">About us</a>
+                <a class="nav-link" href="<?php echo base_url('/index.php/home/aboutus');?>">About us</a>
               </li>
              <!--  <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
@@ -79,43 +79,43 @@
             </div>
 
             <!-- The slideshow/carousel -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="<?php echo $adData->image_1; ?>" alt="" style="width: 100%" height="350">
+            <div class="carousel-inner" style="background-color: grey;">
+              <div class="carousel-item active text-center">
+                <img src="<?php echo $adData->image_1; ?>" alt="" style="width: auto" height="350">
               </div>
               <?php
 
                 if($adData->image_2 != "NULL"){
 
-                echo "<div class='carousel-item'>
-                <img src='{$adData->image_2}' alt='' style='width: 100%' height='350'>
+                echo "<div class='carousel-item text-center'>
+                <img src='{$adData->image_2}' alt='' style='width: auto' height='350'>
               </div>";
 
                 }
 
 
                 if($adData->image_3 != ""){
-                  echo "<div class='carousel-item'>
-                <img src='{$adData->image_3}' alt=''style='width: 100%' height='350'>
+                  echo "<div class='carousel-item text-center'>
+                <img src='{$adData->image_3}' alt=''style='width: auto' height='350'>
               </div>";
                 }
 
                  if($adData->image_4 != ""){
-                  echo "<div class='carousel-item'>
-                <img src='{$adData->image_4}' alt='' style='width: 100%' height='350'>
+                  echo "<div class='carousel-item text-center'>
+                <img src='{$adData->image_4}' alt='' style='width: auto' height='350'>
               </div>";
 
             }
 
               if($adData->image_5 != ""){
-                  echo "<div class='carousel-item'>
-                <img src='{$adData->image_5}' alt='' style='width: 100%' height='350'>
+                  echo "<div class='carousel-item text-center'>
+                <img src='{$adData->image_5}' alt='' style='width: auto' height='350'>
               </div>";
                 }
 
               ?>
             <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
               <span class="carousel-control-prev-icon"></span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
@@ -127,10 +127,16 @@
 
         <!--mobile numbers start from here-->
         <div class="col-12 col-md-4">
+          <div class="contact-seller text-center">
+            <h4 class="display-4--title">Contact Seller</h4>
+          </div>
 
           <div class="border border rounded">
             <br>
-            <h4 align='center'><?php echo $adData->first_name; ?></h4><hr>
+            <div class="seller-name">
+              <h4 align='center'><?php echo $adData->first_name; ?></h4><hr>
+            </div>
+           
 
             <?php
 
@@ -203,11 +209,19 @@
 
           ?>
 
-          <h4 align="center"><?php echo $adData->title; ?></h4>
+          <br><br>
+
+          
 
           <div class="row">
 
             <div class="col-sm-12 col-md-8">
+
+            <div class="ad-title text-center">
+              <h4 align="center"><?php echo $adData->title; ?></h4>
+            </div>
+
+            <br><br>
 
               <p><?php echo $adData->description; ?></p>
 
