@@ -1,10 +1,25 @@
 <?php
 
-class Home extends CI_Controller{	
+class Home extends CI_Controller{
+
+public function checkSessions(){
+		$this->load->library("session");
+		if($this->session->userdata("user_id") != "" && $this->session->userdata("user_name") != "" && $this->session->userdata("user_verification")){
+			return true;
+		}else{
+			return false;
+		}
+	}	
 
 public function index(){
 
-	$this->load->view("index.php");
+	if($this->checkSessions()){
+		$data['sess'] = true;
+	}else{
+		$data['sess'] = false;
+	}
+
+	$this->load->view("index.php",$data);
 
 }
 
@@ -42,6 +57,12 @@ public function allAds(){
 	$this->load->model("HomeModel");
 	$this->load->library("AdStatus");
 	$this->load->library("Filter");
+
+	if($this->checkSessions()){
+		$data['sess'] = true;
+	}else{
+		$data['sess'] = false;
+	}
 	
 	if(isset($_GET['main'])){
 		

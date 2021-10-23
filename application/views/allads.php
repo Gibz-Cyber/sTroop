@@ -26,10 +26,46 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
+            <?php
+
+            if($sess === true){
+                //sessions vailable start from here
+                ?>
+                <ul class="navbar-nav">
+                  <li class="nav-item">
                     <form class="d-flex" action="">
-                        <input class="form-control me-2" name='query' id="table-filter" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2" name='query' id="table-filter" type="search" placeholder="Search" aria-label="Search" style="border-radius: 50px;">
+                        <button class="btn btn-rounded" type="submit">Search</button>
+                    </form>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="http://localhost/supplytroop/index.php/home/allAds">All Ads</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/index.php/user/activeAds'); ?>">My Ads</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url("/index.php/user/postAd"); ?>">Post Ad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url("/index.php/home/aboutus"); ?>">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url("/index.php/user/signOut"); ?>">Sign Out</a>
+              </li>
+             <!--  <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li> -->
+            </ul>
+                <?php
+                //sessions avaible end from here
+              }else{
+                //sessions not available start from here
+                ?>
+                <ul class="navbar-nav">
+              <li class="nav-item">
+                    <form class="d-flex" action="">
+                        <input class="form-control me-2" name='query' id="table-filter" type="search" placeholder="Search" aria-label="Search" style="border-radius: 50px;">
                         <button class="btn btn-rounded" type="submit">Search</button>
                     </form>
                 </li>
@@ -37,7 +73,7 @@
                 <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-signup">Sign Up</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="http://localhost/supplytroop/index.php/home/aboutus">About us</a>
+                <a class="nav-link" href="<?php echo base_url("/index.php/home/aboutus"); ?>">About us</a>
               </li>
              <!--  <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
@@ -48,6 +84,11 @@
                 Post an Ad
               </button>
             </a>
+                <?php
+                //session not available end from here
+              }
+
+            ?>
           </div>
         </div>
       </nav>
