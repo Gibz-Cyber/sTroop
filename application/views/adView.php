@@ -9,10 +9,7 @@
   <link rel="stylesheet" href="<?php echo base_url('/assets/css/style.css'); ?>">
   <link rel="stylesheet" href="<?php echo base_url('/assets/css/fontawesome.css'); ?>">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;600;900&display=swap" rel="stylesheet">
-
-  <script>
-
-  </script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -251,6 +248,24 @@
   </div>
 
 
+  <?php
+
+  include("partials/user-data-partial.php");
+
+  ?>
+  <script type="text/javascript">
+     function loginShowPwd() {
+
+      var type = document.getElementById("login_password");
+
+      if (type.type == "text") {
+        type.type = "password";
+      } else {
+        type.type = "text";
+      }
+
+    }
+  </script>
 
 
   <!-- START THE FOOTER -->

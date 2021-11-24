@@ -9,10 +9,7 @@
   <link rel="stylesheet" href="<?php echo base_url("/assets/css/style.css"); ?>">
   <link rel="stylesheet" href="<?php echo base_url("/assets/css/fontawesome.css"); ?>">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;600;900&display=swap" rel="stylesheet">
-
-  <script>
-
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -104,7 +101,7 @@
             <h3 class="fw-light category-title">
               All categories
             </h3>
-            <a href="<?php echo base_url('/index.php/home/allads/?main=All') ?>" class="list-group-item list-group-item-action active" aria-current="true"> All ads</a>
+            <a href="<?php echo base_url('/index.php/home/allads') ?>" class="list-group-item list-group-item-action active" aria-current="true"> All ads</a>
             <a href="<?php echo base_url('/index.php/home/allads/?main=Vehicles') ?>" class="list-group-item list-group-item-action">Vehicles</a>
             <a href="<?php echo base_url('/index.php/home/allads/?main=Electronics') ?>" class="list-group-item list-group-item-action">Electronics</a>
             <a href="<?php echo base_url('/index.php/home/allads/?main=Property/Land') ?>" class="list-group-item list-group-item-action">Property/Land</a>
@@ -277,44 +274,9 @@
   </div>
 
 
-  <!-- START THE LOGIN FORM -->
-  <div class="modal fade" id="modal-login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title display-4--modaltitle text-capitalize" id="staticBackdropLabel">Login to SupplyTroopLK</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- start form -->
-          <form class="form-horizontal signup-form p-3" action="#">
-            <div class="mb-3">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="lemail">
-            </div>
-
-            <div class="mb-3">
-              <label for="Password" class="form-label">Password</label>
-              <input type="password" id="lPassword" class="form-control" aria-describedby="passwordHelpBlock">
-            </div>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="lflexSwitchCheckDefault">
-              <label class="form-check-label" for="flexSwitchCheckDefault">Show Password</label>
-            </div>
-            <div class="submit-btn mt-4 align-items-center">
-              <button type="submit" class="rounded-pill" value="#">Log in</button>
-            </div>
-          </form>
-          <div class="redirect-signup p-3">
-            <p>Don't have an account yet? <span><a href="javascript: OpenSignup();" data-bs-toggle="modal" data-bs-target="#modal-signup" data-bs-dismiss="modal">Click here</a></span></p>
-          </div>
-        </div>
-        <div class="modal-footer justify-content-center">
-          <img src="assets/images/logo/logo_black.jpg" alt="logo image" width="60" height="60">&nbsp;&nbsp;&nbsp;&copy;SupplyTroopLK
-        </div>
-      </div>
-    </div>
-  </div>
+  <?php
+  include("partials/user-data-partial.php");
+  ?>
 
   <!-- START THE FOOTER -->
   <footer class="footer">

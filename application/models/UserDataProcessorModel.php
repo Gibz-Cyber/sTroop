@@ -153,6 +153,24 @@ class UserDataProcessorModel extends CI_Model{
 
 	}
 
+	public function delNumbers($userId,$numberId){
+
+		$this->load->database();
+		
+		if($numberId == 1){
+			$sql = "UPDATE user_number SET phone_1 = ? WHERE user_id = ?;";
+		}else if($numberId == 2){
+			$sql = "UPDATE user_number SET phone_2 = ? WHERE user_id = ?;";
+		}else{
+			$sql = "UPDATE user_number SET phone_3 = ? WHERE user_id = ?;";
+		}
+
+		$nullType = "NULL";
+		$this->db->query($sql,array($nullType,$userId));
+		return true;
+
+	}
+
 	public function buyAdPosting($userId,$mainCategory,$subCategory,$dist,$title,$desc,$price,$img,$type,$adStatus){
 
 		$this->load->database();

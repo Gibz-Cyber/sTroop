@@ -9,7 +9,7 @@ class UserIdentification extends CI_Controller{
 			$this->load->library('form_validation');
 
 			//form validation start from here
-			$this->form_validation->set_rules("login_email","email","required|max_length[50]|min_length[5]");
+			$this->form_validation->set_rules("login_email","email","required|max_length[50]|min_length[5]|valid_email");
 			$this->form_validation->set_rules("login_password","password","required|max_length[30]|min_length[8]");
 			//form validatiopn end from here
 

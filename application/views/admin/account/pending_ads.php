@@ -81,7 +81,7 @@
                 <th scope="row"><?php echo $individualAd->ad_id; ?></th>
                 <td><?php echo $individualAd->main_category; ?></td>
                 <td><?php echo $individualAd->title; ?></td>
-                <td><button class='btn btn-warning btn-sm'>View</button></td>
+                <td><a href='<?php echo base_url('index.php/Home/adView?')."ad=".$individualAd->ad_id."&admin=true"; ?>'><button class='btn btn-warning btn-sm'>View</button></td></a>
                 <td><button class='btn btn-success btn-sm' onclick="changeStatus(1,'<?php echo $individualAd->ad_id; ?>' )">Active</button></td>
                 <td><button class='btn btn-danger btn-sm' onclick="changeStatus(0,'<?php echo $individualAd->ad_id; ?>' )">Delete</button></td>
               </tr>

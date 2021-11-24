@@ -80,7 +80,7 @@
 							echo "<input type='text' id='number_3' name='number_3' class='form-control' disabled='true' value='".$phoneNumber->phone_3."'>";
 							echo "<button class='btn btn-sm btn-success' id='save_save_3' style='margin-top:5px;'>Save</button>";
 							echo "<button class='btn btn-sm btn-warning' id='edit_3' style='margin-top:5px;'>Edit</button>";
-							echo "<button class='btn btn-sm btn-danger' id='del_3' style='margin-left:5px;'>Delete</button>";
+							echo "<button type='button' class='btn btn-sm btn-danger' id='del_3' style='margin-left:5px;'>Delete</button>";
 							echo "</div>";
 						}else{
 
@@ -174,6 +174,41 @@
 		$.ajax({
 			url:"<?php echo base_url('/index.php/UserDataProcessor/editNumber'); ?>",
 			data:{number:$("#number_1").val(),placeHolder:1},
+			dataType:"json",
+			type:"POST",
+			beforeSend:function(){
+
+			},success:function(respData){
+				var comments = 86;
+				$("#load_contact_info").load("<?php echo base_url('/index.php/UserDataProcessor/loadPhoneNumbers'); ?>",{phpcomments : comments},function(){
+                    $("#contact_loading").hide();
+                 });
+			}
+		});
+	});
+
+	$("#del_3").click(function(event){
+		event.preventDefault();
+		$.ajax({
+			url:"<?php echo base_url('/index.php/UserDataProcessor/delNumber'); ?>",
+			data:{del:3},
+			dataType:"json",
+			type:"POST",
+			beforeSend:function(){
+
+			},success:function(respData){
+				var comments = 86;
+				$("#load_contact_info").load("<?php echo base_url('/index.php/UserDataProcessor/loadPhoneNumbers'); ?>",{phpcomments : comments},function(){
+                    $("#contact_loading").hide();
+                 });
+			}
+		});
+	});
+	$("#del_2").click(function(event){
+		event.preventDefault();
+		$.ajax({
+			url:"<?php echo base_url('/index.php/UserDataProcessor/delNumber'); ?>",
+			data:{del:2},
 			dataType:"json",
 			type:"POST",
 			beforeSend:function(){

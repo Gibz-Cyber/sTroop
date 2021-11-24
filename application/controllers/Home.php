@@ -6,7 +6,7 @@ public function checkSessions(){
 		$this->load->library("session");
 		if($this->session->userdata("user_id") != "" && $this->session->userdata("user_name") != "" && $this->session->userdata("user_verification")){
 			return true;
-		}else{
+		}else{ 
 			return false;
 		}
 	}	
@@ -97,7 +97,13 @@ public function allAds(){
 
 				$this->load->model("HomeModel");
 				$this->load->library("AdStatus");
-				$data['adData'] = $this->HomeModel->getAdData($this->adstatus->getActive(),$_GET['ad']);
+				
+
+				if(isset($_GET['admin'])){
+					$data['adData'] = $this->HomeModel->getAdData($this->adstatus->getPending(),$_GET['ad']);
+				}else{
+					$data['adData'] = $this->HomeModel->getAdData($this->adstatus->getActive(),$_GET['ad']);
+				}
 
 				$this->load->view("adView",$data);
 
@@ -109,6 +115,82 @@ public function allAds(){
 			echo "access denied";
 		}
 
+
+	}
+
+	public function contactEmail(){
+
+		if($_SERVER['REQUEST_METHOD'] == "POST"){
+			//access mode post start from here
+
+			$this->load->library("form_validation");
+			$this->form_validation->set_rules("f-name","first name","required");
+			$this->form_validation->set_rules("l-name","last name","required");
+			$this->form_validation->set_rules("email","email","required");
+			$this->form_validation->set_rules("message","message","required|max_length[800]");
+
+			if(!$this->form_validation->run()){
+				//form validation error start from here
+				$array = array(
+					"success"=>false,
+					"f_name"=>form_error("f-name"),
+					"l_name"=>form_error("l-name"),
+					"email"=>form_error("email"),
+					"message"=>form_error("message")
+				);
+				//form validation error end from here
+			}else{
+				//form validation success start from here
+				
+				//mail send code start from here
+
+				//email send start from here
+			     /*	
+			     	$from = "from address";
+			        
+			        $config['protocol'] = "smtp";
+			        $config['smtp_host'] = "mail server ";
+			        $config['smtp_port'] = ""port;
+			        $config['smtp_timeout'] = "60";
+			        $config['smtp_user'] = "domain.com";
+			        $config['smtp_pass'] = "smtp pass";
+			        $config['charset'] = "utf-8";
+			        $config['newline'] = "\r\n";
+			        $config['mailtype'] = "html";
+			        $config['validation']= true;
+			        
+			        $this->email->initialize($config);
+			        $this->email->set_mailtype("html");
+			        $this->email->from($from,"supplytroop");
+			        $this->email->to($to,"{$this->input->post("f-name")}");
+			        $this->email->subject("mail subject");
+			        $this->email->message($this->input->post("message"));
+			        $mail_send = $this->email->send(); */
+
+			        $mail_send = true;
+
+			        if($mail_send){
+
+			        	$array = array(
+			        		"success"=>true,
+			        		"mail"=>true
+			        	);
+
+			        }
+
+				//mail send code end from here
+
+				//form valodation success end from here
+			}
+
+			echo json_encode($array);
+
+			//access mode post end from here
+		}else{
+			//access method ! post
+			echo "404";
+			//access mode ! post end from here
+		}
 
 	}
 

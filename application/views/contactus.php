@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="<?php echo base_url("/assets/css/style.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("/assets/css/fontawesome.css"); ?>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;600;900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style type="text/css">
+      small{
+        color: red
+      }
+    </style>
 </head>
 <body>
 
@@ -77,19 +83,23 @@
                   <div class="form w-100 pb-2">
                       <form action="#" class="row">
                           <div class="col-lg-6 col-md-6 mb-3">
-                              <input type="text" placeholder="First Name" id="InputFirstName" class="form-control shadow form-control-lg">
+                              <input type="text" placeholder="First Name" id="InputFirstName" class="form-control shadow form-control-lg" name="f-name">
+                              <small id="fname-error"></small>
                           </div>
                           <div class="col-lg-6 col-md-6 mb-3">
-                            <input type="text" placeholder="Last Name" id="InputLastName" class="form-control shadow form-control-lg">
+                            <input type="text" placeholder="Last Name" id="InputLastName" class="form-control shadow form-control-lg" name="l-name">
+                            <small id="lname-error"></small>
                           </div>
                           <div class="col-lg-12 mb-3">
-                            <input type="email" placeholder="Email Address" id="InputEmail" class="form-control shadow form-control-lg">
+                            <input type="email" placeholder="Email Address" id="InputEmail" class="form-control shadow form-control-lg" name="email">
+                            <small id="email-error"></small>
                           </div>
                           <div class="col-lg-12 mb-3">
                             <textarea name="message" id="message" placeholder="message" rows="8" class="form-control shadow form-control-lg"></textarea>
+                            <small id="message-error"></small>
                           </div>
                           <div class="text-center d-grid mt-1">
-                            <button type="button" class="btn btn-primary rounded-pill btnmessage pt-3 pb-3">
+                            <button type="submit" class="btn btn-primary rounded-pill btnmessage pt-3 pb-3" id="mail-btn">
                                 Submit
                                 <i class="fas fa-paper-plane"></i>
                               </button>
@@ -221,6 +231,55 @@
       <a href="#" class="shadow btn btn-primary rounded-circle back-to-top">
         <i class="fas fa-chevron-up"></i>
       </a>
+
+      <script type="text/javascript">
+        $(document).ready(function(){
+
+          $("#mail-btn").click(function(event){
+            event.preventDefault();
+            var btn = document.getElementById("mail-btn");
+            $.ajax({
+              url:"<?php echo base_url('/index.php/Home/contactEmail'); ?>",
+              data:$("form").serialize(), //getting data as serialize array
+              dataType:"json",
+              type:"POST",
+              beforeSend:function(){
+
+                $("#fname-error").html(null); $("#lname-error").html(null); $("#email-error").html(null); $("#message-error").html(null);
+
+              },success:function(resp){
+
+                if(!resp.success){
+                  //form validation error start from here
+                  if(resp.f_name != ""){
+                    $("#fname-error").html(resp.f_name);
+                  }
+
+                  if(resp.l_name != ""){
+                    $("#lname-error").html(resp.l_name);
+                  }
+
+                  if(resp.email != ""){
+                    $("#email-error").html(resp.email);
+                  }
+
+                  if(resp.message != ""){
+                    $("#message-error").html(resp.message);
+                  }
+                  //form validation error end from here
+                }else{
+                  //form validation success start from here
+                  alert("email sent successfully! we will get back to you as soon as we can.");
+                  window.location.href=document.URL;
+                  //form validation success end from here
+                }
+
+              }
+            });
+          });
+
+        });
+      </script>
 
       
 

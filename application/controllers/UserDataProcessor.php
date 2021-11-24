@@ -284,6 +284,43 @@ class UserDataProcessor extends CI_Controller{
 
 	}
 
+	public function delNumber(){
+
+		if($this->checkSessions()){
+			//sessions available 
+			if($_SERVER['REQUEST_METHOD'] == "POST"){
+
+				$this->load->library("form_validation");
+				$this->form_validation->set_rules("del","del","required");
+
+				if(!$this->form_validation->run()){
+					//form validation error start from here
+					$array = array(
+						"success"=>false
+					);
+				}else{
+					//form validation success 
+					$this->load->model("UserDataProcessorModel");
+					$this->UserDataProcessorModel->delNumbers($this->session->userdata("user_id"),$this->input->post("del"));
+
+					$array = array(
+						"success"=>true
+					);
+				}
+
+				echo json_encode($array);
+
+			}else{
+				//request method ! post
+				echo "404";
+			}
+		}else{
+			//sessions ! available
+			echo "404";
+		}
+
+	}
+
 	public function buyPosting(){
 
 		if($this->checkSessions()){
@@ -540,7 +577,7 @@ class UserDataProcessor extends CI_Controller{
 			if($_SERVER['REQUEST_METHOD'] == "POST"){
 				//request method post start from here
 
-						$config['image_library'] = 'gd2';
+						$config['image_library'] = 'gd2';//image library
 						$original_path = './ad_images/sell_original/';
 						$resized_path = './ad_images/sell_resized/';
 						//$resized_path = './uploads/activity_images/resized';
@@ -548,7 +585,7 @@ class UserDataProcessor extends CI_Controller{
 						$this->load->library('image_lib', $config);
 
 		        		$config = array(
-		            		'allowed_types' => 'jpg|jpeg|png', //only accept these file types
+		            		'allowed_types' => 'jpg|jpeg|png|gif', //only accept these file types
 		            		'max_size' => 5140, //5MB max
 		            		'upload_path' => $original_path,//upload directory  
 		            		'file_name'=>uniqid("main_image_",true)."_".$this->session->userdata('user_id')."_".$_FILES["main_image"]['name']  
