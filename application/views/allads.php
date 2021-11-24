@@ -100,7 +100,7 @@
       <!-- START THE CATEGORIES LIST -->
       <div class="row text-center">
         <div class="col-12 col-lg-3 col-md-3 col-sm-4 col-xs-12 categories">
-          <div class="list-group list-group-flush">
+          <div class="list-group list-group-flush shadow-sm">
             <h3 class="fw-light category-title">
               All categories
             </h3>
@@ -121,7 +121,7 @@
 
             <div class="heading-line mb-5 mt-5"></div>
           </div>
-          <div class="list-group list-group-flush">
+          <div class="list-group list-group-flush shadow-sm">
             <h3 class="fw-light category-title">
               District
             </h3>
@@ -168,8 +168,8 @@
 
                 foreach ($adData as $individualAd) {
               ?>
-                  <div class="col-12 col-lg-4 col-md-4">
-                    <div class="card">
+                  <div class="col-12 col-lg-4 col-md-4 mt-4">
+                    <div class="card shadow">
                       <!--card-->
                       <a href="<?php echo base_url('/index.php/home/adView?ad=') . $individualAd->ad_id; ?>">
                         <!--href-->
@@ -206,7 +206,9 @@
                 }
               }
 
+
               ?>
+
 
 
             </div>
